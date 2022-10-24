@@ -2,6 +2,18 @@
 
 ### 자바스크립트 메인 페이지
 https://kimsangjunv1.github.io/codingclass/javascript/index.html
+https://kimsangjunv1.github.io/codingclass/javascript/javascript01.html
+https://kimsangjunv1.github.io/codingclass/javascript/javascript02.html
+https://kimsangjunv1.github.io/codingclass/javascript/javascript03.html
+https://kimsangjunv1.github.io/codingclass/javascript/javascript04.html
+https://kimsangjunv1.github.io/codingclass/javascript/javascript05.html
+https://kimsangjunv1.github.io/codingclass/javascript/javascript06.html
+https://kimsangjunv1.github.io/codingclass/javascript/javascript07.html
+https://kimsangjunv1.github.io/codingclass/javascript/javascript08.html
+https://kimsangjunv1.github.io/codingclass/javascript/javascript09.html
+https://kimsangjunv1.github.io/codingclass/javascript/javascript10.html
+https://kimsangjunv1.github.io/codingclass/javascript/javascript11.html
+https://kimsangjunv1.github.io/codingclass/javascript/javascript12.html
 
 ### HTML 메인 페이지
 https://kimsangjunv1.github.io/codingclass/html/alphabet.html
@@ -31,7 +43,7 @@ https://kimsangjunv1.github.io/codingclass/javascript/effect/quizEffect04.html
 https://kimsangjunv1.github.io/codingclass/javascript/effect/quizEffect05.html   
 https://kimsangjunv1.github.io/codingclass/javascript/effect/quizEffect06.html   
 
-### 슬라이드 이펙트
+### 마우스 이펙트
 https://kimsangjunv1.github.io/codingclass/javascript/effect/mouseEffect01.html  
 https://kimsangjunv1.github.io/codingclass/javascript/effect/mouseEffect02.html  
 https://kimsangjunv1.github.io/codingclass/javascript/effect/mouseEffect03.html  
@@ -59,30 +71,3 @@ https://kimsangjunv1.github.io/codingclass/javascript/effect/parallaxEffect07.ht
 ### 게임 이펙트
 https://kimsangjunv1.github.io/codingclass/javascript/effect/gameEffect.html   
 https://kimsangjunv1.github.io/codingclass/javascript/effect/gameEffect01.html   
-
-### 카드 UI 01
-https://kimsangjunv1.github.io/codingclass/site/cardType/cardType01.html   
-https://kimsangjunv1.github.io/codingclass/site/cardType/cardType02.html   
-https://kimsangjunv1.github.io/codingclass/site/cardType/cardType03.html   
-
-### 텍스트 유형
-https://kimsangjunv1.github.io/codingclass/site/cardType/cardTypeToday.html   
-https://kimsangjunv1.github.io/codingclass/site/cardType/cardTypeTodayTwo.html   
-https://kimsangjunv1.github.io/codingclass/site/cardType/cardTypeTodayThree.html   
-
-### 이미지 유형
-https://kimsangjunv1.github.io/coding/site/ImageType/imageType01.html   
-https://kimsangjunv1.github.io/coding/site/ImageType/imageType02.html   
-
-### 모든 유형   
-https://kimsangjunv1.github.io/coding/site/site1/index.html   
-
-### 구조관련요소
-https://kimsangjunv1.github.io/coding/javascript/study/web_homework.html   
-
-### HTML 메인 페이지
-https://kimsangjunv1.github.io/coding/html/index.html   
-https://kimsangjunv1.github.io/coding/html/alphabet.html   
-
-### CSS 메인 페이지   
-https://kimsangjunv1.github.io/coding/css/index.html   
