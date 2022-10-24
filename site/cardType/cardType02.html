@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카드 유형02</title>
+
+    <style>
+        /* fonts */
+        @import url('https://webfontworld.github.io/gmarket/GmarketSans.css');
+
+        .gmark {
+            font-family: 'GmarketSans';
+            font-weight: 500;
+        }
+
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-weight: normal;
+        }
+
+        /* common(공통) */
+        .container {
+            width: 1160px;
+            padding: 0 20px;
+            margin: 0 auto;
+        }
+
+        .section {
+            padding: 120px 0;
+            /*위 아래 */
+        }
+
+        .section>h2 {
+            /* ">" 이걸로 section 안에 있는 h2선택 */
+            font-size: 50px;
+            line-height: 1;
+            /* 1이라고 적으면 auto랑 똑같음 */
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .section>p {
+            font-size: 22px;
+            font-weight: 300;
+            color: #666;
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        .gray {
+            background-color: #f5f5f5;
+        }
+
+        /* ir 효과(이미지 대체 효과 == alt) */
+        /* 우리 눈에는 필요 없고 스크린 리더기에게는 보여서 읽어줘야 하기 때문에 웹표준 준수 */
+        .ir {
+            display: block;
+            overflow: hidden;
+            font-size: 0;
+            line-height: 0;
+            text-indent: -9999px;
+        }
+
+        /* cardType02 */
+        .card__inner {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .card__inner .card {
+            width: 24%;
+            position: relative;
+        }
+
+        .card__inner .card:nth-child(1) {
+            /* first child 확인 */
+            margin-bottom: 50px;
+        }
+
+        .card__inner .card img {
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+
+        .card__inner .card .tit {
+            font-size: 28px;
+            margin-bottom: 10px;
+
+            /* 한줄 효과 */
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            padding-right: 20px;
+        }
+
+        .card__inner .card .desc {
+            font-size: 18px;
+            font-weight: 300;
+            color: #666;
+            line-height: 1.4;
+
+            /* 세줄 효과 */
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 3; /*줄 효과*/
+            -webkit-box-orient: vertical;
+        }
+
+        .card__inner .card .more {
+            width: 28px;
+            height: 28px;
+            background-image: url(img/Arrow1.svg);
+            display: block; /*width height으로 잡아줌 */
+            position: absolute;
+            right: 0;
+            top: 230px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <section id="cardType02" class="card__wrap gmark section gray">
+        <h2>포트폴리오 구경하기</h2>
+        <p>
+            다양한 병을 예방하기 위해서는 무엇보다 다음과 같은 수칙들이 꼭 필요합니다<br>
+            꼭 병에 걸리지 않도록 준수해주세요 🦠
+        </p>
+        <div class="card__inner container">
+            <article class="card">
+                <img src="img/card_bg02_01.jpg" alt="">
+                <h3 class="tit">손씻을땐 3분씩!</h3>
+                <p class="desc">미국 질병예방통제센터에서는 20초가량 손을 문지르며 구석구석 씻을 것을 권고하였으며 올바른 손씻기를 권장하였습니다.</p>
+                <a href="#" class="more"><span class="ir">더 보기</span></a>
+            </article>
+            <article class="card">
+                <img src="img/card_bg02_02.jpg" alt="">
+                <h3 class="tit">손씻을땐 3분씩!</h3>
+                <p class="desc">미국 질병예방통제센터에서는 20초가량 손을 문지르며 구석구석 씻을 것을 권고하였으며 올바른 손씻기를 권장하였습니다.</p>
+                <a href="#" class="more"><span class="ir">더 보기</span></a>
+            </article>
+            <article class="card">
+                <img src="img/card_bg02_03.jpg" alt="">
+                <h3 class="tit">손씻을땐 3분씩!</h3>
+                <p class="desc">미국 질병예방통제센터에서는 20초가량 손을 문지르며 구석구석 씻을 것을 권고하였으며 올바른 손씻기를 권장하였습니다.</p>
+                <a href="#" class="more"><span class="ir">더 보기</span></a>
+            </article>
+            <article class="card">
+                <img src="img/card_bg02_04.jpg" alt="">
+                <h3 class="tit">손씻을땐 3분씩!</h3>
+                <p class="desc">미국 질병예방통제센터에서는 20초가량 손을 문지르며 구석구석 씻을 것을 권고하였으며 올바른 손씻기를 권장하였습니다.</p>
+                <a href="#" class="more"><span class="ir">더 보기</span></a>
+            </article>
+            <article class="card">
+                <img src="img/card_bg02_05.jpg" alt="">
+                <h3 class="tit">손씻을땐 3분씩!</h3>
+                <p class="desc">미국 질병예방통제센터에서는 20초가량 손을 문지르며 구석구석 씻을 것을 권고하였으며 올바른 손씻기를 권장하였습니다.</p>
+                <a href="#" class="more"><span class="ir">더 보기</span></a>
+            </article>
+            <article class="card">
+                <img src="img/card_bg02_06.jpg" alt="">
+                <h3 class="tit">손씻을땐 3분씩!</h3>
+                <p class="desc">미국 질병예방통제센터에서는 20초가량 손을 문지르며 구석구석 씻을 것을 권고하였으며 올바른 손씻기를 권장하였습니다.</p>
+                <a href="#" class="more"><span class="ir">더 보기</span></a>
+            </article>
+            <article class="card">
+                <img src="img/card_bg02_07.jpg" alt="">
+                <h3 class="tit">손씻을땐 3분씩!</h3>
+                <p class="desc">미국 질병예방통제센터에서는 20초가량 손을 문지르며 구석구석 씻을 것을 권고하였으며 올바른 손씻기를 권장하였습니다.</p>
+                <a href="#" class="more"><span class="ir">더 보기</span></a>
+            </article>
+            <article class="card">
+                <img src="img/card_bg02_08.jpg" alt="">
+                <h3 class="tit">손씻을땐 3분씩!</h3>
+                <p class="desc">미국 질병예방통제센터에서는 20초가량 손을 문지르며 구석구석 씻을 것을 권고하였으며 올바른 손씻기를 권장하였습니다.</p>
+                <a href="#" class="more"><span class="ir">더 보기</span></a>
+            </article>
+        </div>
+    </section>
+</body>
+
+</html>

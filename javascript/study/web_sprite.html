@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 요소 객체</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li class="active"><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="j../avascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="effect">
+                <li><a href="effect/searchEffect01.html">검색 효과</a></li>
+                <li><a href="effect/quizEffect01.html">퀴즈 효과</a></li>
+                <li><a href="effect/textEffect01.html">텍스트 효과</a></li>
+                <li><a href="effect/mouseEffect01.html">마우스 효과</a></li>
+                <li><a href="effect/sliderEffect01.html">슬라이드 효과</a></li>
+                <li><a href="effect/parallaxEffect01.html">패럴랙스 효과</a></li>
+                <li><a href="effect/gameEffect01.html">게임 효과</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="operator.html">연산자</a></li>
+                <li><a href="for.html">반복문</a></li>
+                <li><a href="if.html">조건문</a></li>
+                <li><a href="type.html">데이터 타입</a></li>
+                <li><a href="function.html">함수</a></li>
+                <li><a href="var.html">지역변수/전역변수</a></li>
+                <li><a href="element.html">요소 선택</a></li>
+                <li><a href="web_search_effect.html">서치 이펙트</a></li>
+                <li><a href="web_slice.html">slice/substring/substr</a></li>
+                <li><a href="web_vector_bitmap.html">벡터와 비트맵</a></li>
+                <li><a href="web_standards.html">웹 표준</a></li>
+                <li><a href="web_pop_join_push.html">POP/JOIN/PUSH</a></li>
+                <li><a href="web_naejang.html">내장 함수</a></li>
+                <li><a href="web_media_query.html">미디어쿼리</a></li>
+                <li><a href="web_jeongyu.html">정규 표현식</a></li>
+                <li><a href="web_indexOf.html">indexOf()</a></li>
+                <li><a href="web_homework.html">사이트 예제 만들기</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <div class="main_menu">
+            <ul>
+                <!--ul>li*17>a[href="#"]{$$} 사용함-->
+                <li><a href="#">01. 요소 메서드 : 선택자 : document.querySelector() : 요소 선택자</a></li>
+                <!--요즘 스타일-->
+                <li><a href="#">01. 요소 메서드 : 선택자 : document.querySelectorAll() : 모든 요소 선택자</a></li>
+                <!--요즘 스타일-->
+                <li><a href="#">01. 요소 메서드 : 선택자 : document.getElementById() : 아이디 요소 선택자</a></li>
+                <!--옛날 스타일-->
+                <li><a href="#">01. 요소 메서드 : 선택자 : document.getElementByClassName() : 클래스 요소 선택자</a></li>
+                <!--옛날 스타일-->
+                <li><a href="#">01. 요소 메서드 : 선택자 : document.getTagName() : 태그 요소 선택자</a></li>
+                <br>
+                <li><a href="#">01. 요소 메서드 : 텍스트 : innerText() : 요소에 텍스트 설정하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 텍스트 : textContent() : 요소에 텍스트 설정하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 텍스트 : innerHTML() : 요소에 텍스트(태그인식) 설정하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 텍스트 : outerHTML() : 요소에 텍스트(태그인식) 설정하기</a></li>
+                <br>
+                <li><a href="#">01. 요소 메서드 : 클래스 : classList.add() : 클래스 추가하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 클래스 : classList.remove() : 클래스 삭제하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 클래스 : classList.toggle() : 클래스 추가/삭제하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 클래스 : classList.contains() : 클래스 존재 여부 확인하기</a></li>
+            </ul>
+        </div>
+        <main id="main">
+            <div class="document">
+                <!-- 1번 -->
+                <div id="sample01" class="sample">
+                    <h2 class="t_tit">스프라이트란?</h2>
+                    <p class="t_desc2_css">여러가지의 이미지가 한 이미지 안에 모여 있는것을 말합니다</p>
+
+                    <hr>
+
+                    <h2 class="t_tit2">스프라이트 예시 제작해보기</h2>
+                    <p class="t_box">스프라이트에 들어갈 각 그림간의 간격은 <i>추후 background-position을 쉽게 파악하기 위해 좌표가 딱 50으로 떨어지게끔 작업</i>해주고 스프라이트 이미지를 만들어 줍니다.</p>
+                    <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="100%" height="400"
+                        src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FIPypywur8hxaKAY7b34BIv%2F%25EC%2582%25AC%25EC%259D%25B4%25ED%258A%25B8-%25EB%25A7%258C%25EB%2593%25A4%25EA%25B8%25B0-02%3Fnode-id%3D2%253A70"
+                        allowfullscreen></iframe>
+                    <hr>
+                    <h2 class="t_tit2">CSS 코드</h2>
+                    <p class="t_box">버튼의 글자는 가리고 이미지만 보여주기 위해 ir효과를 주어 글자는 숨기고 그림만 띄우게 css를 작성하겠습니다.<br>또한 간단한 hover효과를 주어 눈으로 좀 더 확인이 편하게 해보겠습니다.</p>
+                    <p class="t_box">ir효과 : 리더기는 텍스트만 읽기 가능하기 때문에 이미지 설명을 위해 사용하며 시각적으로 불편함이 없도록 텍스트만 안보이게 숨겨주고 실제로 설명은 붙어있지만 이미지만을 보여줄때 사용하는 방법입니다.</p>
+                    <details>
+                        <summary  class="t_box">ir 효과 CSS코드보기</summary>
+                        <div class="script">
+                            <div class="t_code">
+                                <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+    <pre><code class="language-css">/* ir 효과 */
+        .ir {
+            display: block;
+            overflow: hidden;
+            font-size: 0;
+            line-height: 0;
+            text-indent: -9999px;
+        }
+    </code></pre>
+                            </div>
+                        </div>
+                    </details>
+                    <div class="script">
+                        <div class="t_code">
+                            <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+<pre><code class="language-css">/* ir 효과 */
+    .ir {
+        display: block;
+        overflow: hidden;
+        font-size: 0;
+        line-height: 0;
+        text-indent: -9999px;
+    }
+
+    .image__sns{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .image__sns a {
+        /* 버튼 크기 설정 */
+        width: 100px;
+        height: 100px;
+        background: #fff;
+        border: 1px solid #ededed;
+        border-radius: 50%;
+        display: block;
+
+        margin-top: 20px;
+
+        /* 백그라운드 설정 */
+        background: url(https://raw.githubusercontent.com/kimsangjunv1/coding/19262cf6de4241e5d4e3fe5a16ee9b53455156f1/site/ImageType/img/icon_-1.svg) center no-repeat;
+        background-position: 0px;
+        background-size: 775px;
+    }
+
+    .image__sns p {
+        /* 버튼 크기 설정 */
+        width: 100%;
+        height: 100px;
+        background: #fff;
+        border: 1px solid #ededed;
+        border-radius: 50px;
+        /* display: block; */
+
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 20px;
+    }
+
+    .image__sns:hover em{
+        display: inline;
+    }
+
+    /* a에 마우스를 올려두었을떄 */
+    .image__sns:hover a,
+    .image__sns:hover p {
+        background-position: -164px;
+        background-size: 890px;
+        background-color: rgb(83, 32, 248);
+        color: #fff;
+        border: 0.1px solid rgb(83, 32, 248);
+        box-shadow: 0px 10px 40px 5px #22284d1c;
+        transition: all 0.25s ease-in-out;
+    }
+    
+    /* a에 마우스를 떼어낼때 */
+    .image__sns:not(:hover) a {
+        transition: 0.25s;
+    }
+</code></pre>
+                        </div>
+                    </div>
+                    <hr>
+                    <h2 class="t_tit2">HTML 코드</h2>
+                    <p class="t_box">간단한 예제 구현을 위한 구조를 구성해보겠습니다.</p>
+                    <div class="script">
+                        <div class="t_code">
+                            <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+<pre><code class="language-css">&lt;div class="image__sns"&gt;
+    &lt;a href="#" class="link"&gt;&lt;span class="ir"&gt;페이스북&lt;/span&gt;&lt;/a&gt;
+    &lt;p&gt;마우스를 올려보세요 &lt;em style="display: none"&gt;움직이기 완료&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+                        </div>
+                    </div>
+                    <hr>
+                    <h2 class="t_tit2">예제 완성</h2>
+                    <p class="t_box">마우스를 버튼에 올리면 한장의 스프라이트안에 저장되어있는 다른 아이콘으로 이동합니다.</p>
+                    <div class="t_iframe" style="min-height : 165px; padding-top:0;">
+                        <iframe src="https://kimsangjunv1.github.io/coding/javascript/study/web_sprite(yejae).html" frameborder="0"></iframe>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!-- //main -->
+
+        <footer id="footer">
+            <a href="mailto:webstoryboy@naver.com">webstoryboy@naver.com</a>
+        </footer>
+        <!-- //footer -->
+        <script src="../assets/js/highlight.min.js"></script>
+        <script>
+            hljs.highlightAll();
+        </script>
+</body>
+
+</html>

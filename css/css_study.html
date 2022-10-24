@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 기초</title>
+    <link href="https://webfontworld.github.io/gmarket/GmarketSans.css" rel="stylesheet">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: 'GmarketSans';
+        }
+
+        /*헤더*/
+        #header{
+            padding: 2vw;
+            border-bottom: 1px dashed #dedede;
+        }
+        #header h1{
+            font-size: 4vw;
+            margin-bottom: 2vw;
+        }
+        #header nav{}
+        #header nav ul{}
+        #header nav ul li{
+            list-style: none; /* 점 없앰 */
+            display: inline; /* 가로 정렬 */
+        }
+        #header nav ul li a{
+            text-decoration: none;
+            color: #000;
+            border: 1px solid #000;
+            padding: 0.6vw 1vw 0.6vw 1vw;
+            display: inline-block;
+        }
+        #header nav ul li a:hover{
+            background-color: #000;
+            color: #fff;
+            transition: 0.3s;
+        }
+
+        /*컨텐츠*/
+        #contents{
+            padding: 2vw;
+        }
+
+        #contents .menu {
+            border-bottom: 1px dashed #dedede; /*선 생성*/
+            padding-bottom: 2vw;
+        }
+        #contents .menu ul li {
+            list-style: none;
+            display: inline;
+        }
+        #contents .menu ul li a{
+            text-decoration: none;
+            border: 1px solid #000;
+            background-color: #000;
+            color: #fff;
+            padding: 0.6vw 1vw 0.6vw 1vw;
+            word-break: keep-all;
+            margin-top: 0.7vw;
+            margin-bottom: 0.7vw;
+            display: inline-block;
+        }
+        .article {
+            padding: 2vw 0;
+            line-height: 1.6;
+        }
+        .article h2 {
+            font-weight: normal;
+            margin-bottom: 10px;
+        }
+        .article h3 {
+            margin-top: 20px;
+            font-weight: normal;
+            margin-bottom: 10px;
+        }
+        .article p{
+            margin-bottom: 10px;
+        }
+        .article .table{
+            width: 100%;
+            border-spacing: 0;
+            border-collapse: collapse; /*겹친 선 없앰 */
+            margin-bottom: 10px;
+        }
+        .article .table tr th{
+            border: 1px solid #dedede;
+            padding: 10px;
+            font-weight: normal;
+            background-color: #f5f5f5;
+        }
+        .article .table tr td{
+            border: 1px solid #dedede;
+            padding: 10px;
+        }
+        .article .table .center{
+            text-align: center;
+        }
+        .article .box{
+            background-color: #f5f5f5;
+            padding: 10px;
+        }
+        .article .box_px{
+            background-color: #f5f5f5;
+            font-size: 12px;
+            padding: 10px;
+        }
+        .article .box_per{
+            background-color: #f5f5f5;
+            font-size: 120%;
+            padding: 10px;
+        }
+        .article .box_em{
+            background-color: #f5f5f5;
+            font-size: 1.5em;
+            padding: 10px;
+        }
+        .article .box_rem{
+            background-color: #f5f5f5;
+            font-size: 0.8rem;
+            padding: 10px;
+        }
+        .article .box_vw{
+            background-color: #f5f5f5;
+            font-size: 3vw;
+            padding: 10px;
+        }
+        .article .box_vh{
+            background-color: #f5f5f5;
+            font-size: 2vh;
+            padding: 10px;
+        }
+        /* 미디어 쿼리 */
+        @media (max-width: 800px){
+            #header{
+                padding: 16px;
+            }
+            #header h1{
+                font-size: 40px;
+            }
+            #header nav ul li a{
+                padding: 5px 10px;
+                font-size: 18px;
+            }
+            #contents{
+                padding: 16px;
+            }
+        }
+    
+    </style>
+</head>
+<body>
+    <header id="header">
+        <h1>CSS</h1>
+        <nav>
+            <ul>
+                <li><a href="#">기초</a></li>
+                <li><a href="#">주제</a></li>
+                <li><a href="#">알파벳</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="contents">
+        <nav class="menu">
+            <ul>
+                <li><a href="css_study.html">CSS</a></li>
+            </ul>
+        </nav>
+        <article class="article">
+            <!-- CSS단위 -->
+            <h2>CSS 단위</h2>
+            <p>글자 크기를 명시하지 않을 경우 16px가 기본 값</p>
+            <!-- CSS단위 끝 -->
+
+            <!-- PX -->
+            <h3>px</h3>
+            <p>해상도에 따라 상대적으로 달라지는 기본 단위입니다.</p>
+            <p class="box_px">
+                font-size: 12px;
+            </p>
+            <!-- PX 끝-->
+
+            <!-- 120 per -->
+            <h3>px</h3>
+            <p>부모 요소의 글자 크기를 100% 기준으로 계산한 % 단위입니다.</p>
+            <p class="box_per">
+                font-size: 120%;
+            </p>
+            <!-- 120 per 끝-->
+
+            <!-- em -->
+            <h3>em</h3>
+            <p>부모 요소의 글자 100% 기준으로 계산한 크기의 100분의 1단위</p>
+            <p class="box_em">
+                font-size: 1.5em;
+            </p>
+            <!-- em 끝-->
+
+            <!-- rem -->
+            <h3>rem</h3>
+            <p>부모 요소의 글자 100% 기준으로 계산한 크기의 100분의 1단위</p>
+            <p class="box_rem">
+                font-size: 0.8rem;
+            </p>
+            <!-- rem 끝-->
+
+            <!-- vw -->
+            <h3>rem</h3>
+            <p>최상의 요소의 크기를 100% 기준으로 100분의 1단위한것 즉 root, html 요소를 뜻하므로,<br>
+                html에서 지정한 글자 크기가 1rem이 됩니다.
+            </p>
+            <p class="box_vw">
+                font-size: 3vw;
+            </p>
+            <!-- vw 끝-->
+
+            <!-- vh -->
+            <h3>vh</h3>
+            <p>vh는 뷰포트 높이 값의 100분의 1단위</p>
+            <p class="box_vh">
+                font-size: 2vh;
+            </p>
+            <!-- vh 끝-->
+        </article>
+    </section>
+</body>
+</html>

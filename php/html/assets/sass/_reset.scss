@@ -1,0 +1,159 @@
+
+/* 여백 초기화 */
+body,
+div,
+dl,
+dd,
+dt,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+fieldset,
+form,
+legend,
+p,
+blockquote,
+th,
+td,
+input,
+button,
+figure,
+figcaption {
+    margin: 0;
+    padding: 0; 
+}
+
+/* 시멘틱 태그 초기화 */
+article,
+aside,
+datalist,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+/* 폰트 초기화 */
+body,
+button,
+input,
+select,
+table,
+textarea {  
+    color: $font-basic;
+    font-family: $family-basic ;
+}
+
+/* 링크 초기화 */
+a {
+    text-decoration: none;
+    color: $font-basic;
+}
+
+/* 목록 초기화 */
+li,
+ol,
+ul {
+    list-style: none;
+}
+
+/* 폰트 스타일 초기화 */
+em, address {
+    font-style: normal;
+}
+
+/* 제목 초기화 */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
+}
+
+/* 이미지 초기화  */
+img {
+    width: 100%;
+    vertical-align: top;
+}
+
+/* 보더 초기화 */
+img, fieldset,button {
+    border: 0;
+}
+
+/* 클리어 픽스 */
+.clearfix {
+    zoom: 1;
+}
+.clearfix::before,
+.clearfix::after {
+    content: '';
+    display: block;
+    line-height: 0;
+}
+.clearfix::after{
+    clear: both;
+}
+
+/* 블라인드 효과*/
+/* .blind {
+    width: 0;
+    height: 0;
+    line-height: 0;
+    overflow: hidden;
+    position: absolute;
+    text-indent: -99999;
+} */
+
+.blind {
+    position:absolute;
+    clip:rect(0 0 0 0);
+    width:1px;
+    height:1px;
+    margin:-1px;
+    overflow:hidden
+}
+
+/* 이미지 대체(ir) */
+
+.ir {
+    display: block;
+    overflow: hidden;
+    font-size: 0;
+    line-height: 0;
+    text-indent: -9999px;
+}
+
+/* 초기화 */
+// legend, label {
+//     @include blind
+// }
+
+//보더초기화 
+img,
+fieldset,
+button {
+    border: 0;
+}
+
+//테이블 초기화
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}

@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 요소 객체</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="javascript01.html">데이터 저장하기</a></li>
+                <li><a href="javascript02.html">데이터 불러오기</a></li>
+                <li><a href="javascript03.html">데이터 실행하기</a></li>
+                <li><a href="javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="javascript05.html">문자열 객체</a></li>
+                <li><a href="javascript06.html">배열 객체</a></li>
+                <li><a href="javascript07.html">수학 객체</a></li>
+                <li><a href="javascript08.html">숫자 객체</a></li>
+                <li><a href="javascript09.html">브라우저 객체</a></li>
+                <li class="active"><a href="javascript10.html">요소 객체</a></li>
+                <li><a href="javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="effect">
+                <li><a href="effect/searchEffect01.html">검색 효과</a></li>
+                <li><a href="effect/quizEffect01.html">퀴즈 효과</a></li>
+                <li><a href="effect/textEffect01.html">텍스트 효과</a></li>
+                <li><a href="effect/mouseEffect01.html">마우스 효과</a></li>
+                <li><a href="effect/sliderEffect01.html">슬라이드 효과</a></li>
+                <li><a href="effect/parallaxEffect01.html">패럴랙스 효과</a></li>
+                <li><a href="effect/gameEffect01.html">게임 효과</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="study/basic.html">기본 규칙</a></li>
+                <li><a href="study/operator.html">연산자</a></li>
+                <li><a href="study/for.html">반복문</a></li>
+                <li><a href="study/if.html">조건문</a></li>
+                <li><a href="study/type.html">데이터 타입</a></li>
+                <li><a href="study/function.html">함수</a></li>
+                <li><a href="study/var.html">지역변수/전역변수</a></li>
+                <li><a href="study/element.html">요소 선택</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <div class="main_menu">
+            <ul>
+                <!--ul>li*17>a[href="#"]{$$} 사용함-->
+                <li><a href="#">01. 요소 메서드 : 선택자 : document.querySelector() : 요소 선택자</a></li>
+                <!--요즘 스타일-->
+                <li><a href="#">01. 요소 메서드 : 선택자 : document.querySelectorAll() : 모든 요소 선택자</a></li>
+                <!--요즘 스타일-->
+                <li><a href="#">01. 요소 메서드 : 선택자 : document.getElementById() : 아이디 요소 선택자</a></li>
+                <!--옛날 스타일-->
+                <li><a href="#">01. 요소 메서드 : 선택자 : document.getElementByClassName() : 클래스 요소 선택자</a></li>
+                <!--옛날 스타일-->
+                <li><a href="#">01. 요소 메서드 : 선택자 : document.getTagName() : 태그 요소 선택자</a></li>
+                <br>
+                <li><a href="#">01. 요소 메서드 : 텍스트 : innerText() : 요소에 텍스트 설정하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 텍스트 : textContent() : 요소에 텍스트 설정하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 텍스트 : innerHTML() : 요소에 텍스트(태그인식) 설정하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 텍스트 : outerHTML() : 요소에 텍스트(태그인식) 설정하기</a></li>
+                <br>
+                <li><a href="#">01. 요소 메서드 : 클래스 : classList.add() : 클래스 추가하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 클래스 : classList.remove() : 클래스 삭제하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 클래스 : classList.toggle() : 클래스 추가/삭제하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 클래스 : classList.contains() : 클래스 존재 여부 확인하기</a></li>
+            </ul>
+        </div>
+        <main id="main">
+            <div class="document">
+                <!-- 01번 메인 샘플 시작 -->
+                <h2 class="t_tit2">Figma</h2>
+                <p class="t_desc2_css">
+                    피그마를 이용해 그리드를 생성 후 각 규격에 맞게 요소들을 구성합니다.
+                </p>
+                <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2Fa9buUse4J646SWPSoOw7ng%2F%25EC%2582%25AC%25EC%259D%25B4%25ED%258A%25B8-%25EB%25A7%258C%25EB%2593%25A4%25EA%25B8%25B0%3Fnode-id%3D339%253A52" allowfullscreen></iframe>
+                <hr>
+
+                <!-- HTML 코드 -->
+                <div id="sample01" class="sample">
+                    <h2 class="t_tit2">HTML 코드</h2>
+                    <p class="t_desc2_css">
+                        웹 표준을 준수하기 위해 태그는 시멘틱 태그를 사용해 작성하며 효율적인 코드 작성을 위해 div태그를 여러개 만드는것이 아닌 한 태그안에 클래스를 다중으로 삽입하고 aria-hidden을 통해 필요없는 부분에 대하여 음성읽기를 넘깁니다.
+                    </p>
+                    <div class="result">
+                        <!-- 결과보기 -->
+                        <details>
+                            <summary class="t_box">코드보기</summary>
+                            <div class="sample03_result">
+                                <div class="script">
+                                    <div class="t_code">
+<pre><code class="language-html">&lt;section class="section"&gt;
+    &lt;div class="container"&gt;
+        &lt;div class="card__comtainer"&gt;
+            &lt;div class="card"&gt;
+                &lt;!-- &lt;img class="main__img" src="img/card_bg04.jpg" alt=""&gt; --&gt;
+                &lt;div class="img__source"&gt;
+                    &lt;h1 class="divider"&gt;
+                        WASH&lt;/h1&gt;
+                &lt;/div&gt;
+                &lt;h2&gt;손씻기 시간 준수!&lt;/h2&gt;
+                &lt;p&gt;손을 씻는것은 상당히 중요한 행동입니다, 손을 씻음으로써 병을 예방할 수 있고 각종 미세먼지와 세균에서 벗어날 수 있기 때문에 상당히 중요한 일입니다.&lt;/p&gt;
+                &lt;div class="profile"&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;dr. jun&lt;/li&gt;
+                        &lt;li&gt;9 resources&lt;/li&gt;
+                    &lt;/ul&gt;
+                    &lt;img src="img/card_bg04_profile.jpg" alt=""&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="card"&gt;
+                &lt;!-- &lt;img class="main__img" src="img/card_bg03_02.jpg" alt=""&gt; --&gt;
+                &lt;div class="img__source2"&gt;
+                    &lt;h1 class="divider"&gt;
+                        Clean&lt;/h1&gt;
+                &lt;/div&gt;
+                &lt;h2&gt;손은 꼭 꼼꼼히!&lt;/h2&gt;
+                &lt;p&gt;미국 질병예방통제센터에서는 20초가량 손을 문지르며 구석구석 씻을 것을 권고하였으며 올바른 손 닦기는 전 세계에서 추구하고자 하는 방식입니다.&lt;/p&gt;
+                &lt;div class="profile"&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;dr. heck&lt;/li&gt;
+                        &lt;li&gt;5 resources&lt;/li&gt;
+                    &lt;/ul&gt;
+                    &lt;img src="img/card_bg03_02_profile.jpg" alt=""&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="card"&gt;
+                &lt;!-- &lt;img class="main__img" src="img/card_bg03_03.jpg" alt=""&gt; --&gt;
+                &lt;div class="img__source3"&gt;
+                    &lt;h1 class="divider"&gt;
+                        Happy&lt;/h1&gt;
+                &lt;/div&gt;
+                &lt;h2 class="title_space"&gt;약은 시기 적절하게 먹어야 한다.&lt;/h2&gt;
+                &lt;p&gt;약은 꼭 제때제때 드셔야 합니다 안그러면 몸에 항채가 생겨 약의 효과가 나타나지 않을수가 있기 때문에 꼭 드셔야 탈이 안생깁니다 꼭 챙겨드세요&lt;/p&gt;
+                &lt;div class="profile"&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;dr. jo&lt;/li&gt;
+                        &lt;li&gt;3 resources&lt;/li&gt;
+                    &lt;/ul&gt;
+                    &lt;img src="img/card_bg03_03_profile.jpg" alt=""&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    
+    
+&lt;/section&gt;
+</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+                        </details>
+                        <!-- 결과보기 끝 -->
+                    </div>
+                </div>
+                <!-- HTML 코드 끝 -->
+
+                <hr>
+
+                <!-- CSS 코드 -->
+                <div id="sample01" class="sample">
+                    <h2 class="t_tit2">CSS 코드</h2>
+                    <p class="t_desc2_css">
+                        폰트는 'GmarketSans'를 이용하고 .card 클래스를 생성해 카드 Ui를 구현합니다.
+                    </p>
+                    <div style="display: flex; justify-content: space-between; flex-wrap: nowrap; " class="script">
+                        <div style="width: 33%;"class="t_code">
+<pre><code class="language-css">/* 한줄 효과 */
+overflow: hidden;
+white-space: nowrap;
+text-overflow: ellipsis;
+padding-right: 20px;
+
+</code></pre>
+                        </div>
+                        <div style="width: 33%;" class="t_code">
+<pre><code class="language-css">/* 세줄 효과 */
+overflow: hidden;
+text-overflow: ellipsis;
+display: -webkit-box;
+-webkit-line-clamp: 3; /*줄 효과*/
+-webkit-box-orient: vertical;
+</code></pre>
+                        </div>
+                        <div style="width: 33%;" class="t_code">
+<pre><code class="language-css"> /* ir 효과 */
+display: block;
+overflow: hidden;
+font-size: 0;
+line-height: 0;
+text-indent: -9999px;
+</code></pre>
+                        </div>
+                    </div>
+                    <div class="result">
+                        <!-- 결과보기 -->
+                        <details>
+                            <summary class="t_box">코드보기</summary>
+                            <div class="sample03_result">
+                                <div class="script">
+                                    <div class="t_code">
+<pre><code class="language-css">/* fonts */
+    @import url('https://webfontworld.github.io/score/SCoreDream.css');
+
+    .scoredream {
+        font-family: 'SCoreDream';
+        font-weight: 500;
+    }
+    body{
+        background-color: #2254c3;
+    }
+    /* Reset */
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    a {
+        text-decoration: none;
+        color: #000;
+    }
+
+    img {
+        width: 100%;
+        border-radius: 10px;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-weight: normal;
+    }
+
+    /* common(공통) */
+    .container {
+        width: 1160px;
+        padding: 0 20px;
+        margin: 0 auto;
+    }
+
+    .section {
+        padding: 120px 0;
+        /*위 아래 */
+    }
+
+    .section>h2 {
+        /* ">" 이걸로 section 안에 있는 h2선택 */
+        font-size: 50px;
+        line-height: 1;
+        /* 1이라고 적으면 auto랑 똑같음 */
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .section > p {
+        font-size: 22px;
+        font-weight: 300;
+        color: #666;
+        text-align: center;
+        margin-bottom: 30px;
+        font-size: 16px;
+    }
+
+    .gray {
+        background-color: #f5f5f5;
+    }
+
+    /* card */
+    .card{
+        width: 32%;
+        /* background-color: rgb(230, 230, 230); */
+        border: 1px solid #eeeeee;
+        background-color: #fff;
+        padding: 20px;
+    }
+    
+    .card h2{
+        margin-bottom: 10px;
+        font-weight: 300;
+        font-size: 28px;
+        line-height: 28px;
+    }
+
+    .card p{
+        margin-bottom: 30px;
+        font-weight: 300;
+        line-height: 27.2px;
+    }
+
+    .card .main__img{
+        border-radius: 10px;
+        margin-bottom: 19px;
+        box-shadow: 4px 4px 5px 0px rgba(0, 0, 0, 0.24) ;
+    }
+    .card__comtainer{
+        display: flex;
+        justify-content: space-between;
+        /* flex-wrap: wrap; */
+    }
+    .card__comtainer img{
+        border-radius: 30px;
+        box-shadow: 4px 4px 5px 0px rgba(0, 0, 0, 0.24) ;
+    }
+
+    .card__comtainer .img__source,
+    .img__source2,
+    .img__source3{
+        background-image: url(img/card_bg04.jpg);
+        border-radius: 10px;
+        box-shadow: 4px 4px 5px 0px rgba(0, 0, 0, 0.24) ;
+        height: 293px;
+        width: 347px;
+        margin-bottom: 19px;
+    }
+    .img__source2{
+        background-image: url(img/card_bg03_02.jpg);
+
+    }
+    .img__source3{
+        background-image: url(img/card_bg03_03.jpg);
+
+    }
+    .card__comtainer ul{
+        margin-right: 12.3px;
+        height: 100%;
+        line-height: 1.4;
+    }
+    .card__comtainer ul li{
+        list-style: none;
+        text-align: right;
+    }
+    .card__comtainer .profile{
+        display: flex;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+        height: 50px;
+    }
+    .card__comtainer .profile img{
+        width:  50px;
+        height: 50px;
+    }
+
+    .card__comtainer .profile ul li{
+        font-size: 19px;
+        height: 50%;
+    }
+    .card__comtainer .profile ul li:first-child{
+        color: #188422;
+    }
+    .card__comtainer .divider{
+        /* width: 50px; */
+        background-color: #fff;
+        float: right;
+        margin-top: 10px;
+        margin-right: 9.7px;
+        padding: 6px 14.5px;
+        border-radius: 50px;
+        text-align: center;
+        font-size: 15px;
+    }
+    .title_space{
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+                        </details>
+                        <!-- 결과보기 끝 -->
+                    </div>
+                </div>
+                <!-- CSS 코드 끝 -->
+
+                <hr>
+
+                <h2 class="t_tit2">결과</h2>
+                <div class="t_iframe" style="min-height : 1000px; padding-top:0;">
+                    <iframe src="https://kimsangjunv1.github.io/coding/site/cardType/cardType03.html" frameborder="0"></iframe>
+                </div>
+                <hr>
+                <div style="display:flex; justify-content:space-between; margin-left:20%; margin-right:20%;">
+                    <div class="t_link">
+                        <a href="https://github.com/kimsangjunv1/coding/blob/main/site/cardType/cardType03.html" target="blank">원본 소스 보기</a>
+                    </div>
+                    <div class="t_link">
+                        <a href="https://kimsangjunv1.github.io/coding/site/cardType/cardType03.html" target="blank">원본 페이지 보기</a>
+                    </div>
+                </div>
+            </div>
+            
+        </main>
+        <!-- //main -->
+
+        <footer id="footer">
+            <a href="mailto:webstoryboy@naver.com">webstoryboy@naver.com</a>
+        </footer>
+        <!-- //footer -->
+        <script src="../assets/js/highlight.min.js"></script>
+        <script>
+            hljs.highlightAll();
+        </script>
+</body>
+
+</html>

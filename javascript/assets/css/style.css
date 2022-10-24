@@ -1,0 +1,716 @@
+/* 웹폰트 --------------*/
+@import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');
+
+/* 리셋 --------------*/
+/* 여백 초기화 --------------*/
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'NexonLv1Gothic';
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* 링크 초기화 --------------*/
+a {
+    text-decoration: none;
+    color: #222;
+}
+
+/*목록 초기화 --------------*/
+li {
+    list-style: none;
+}
+
+/* 제목 초기화 --------------*/
+h1, h2, h3, h4, h5, h6{
+    font-weight: normal;
+}
+
+/* 모든 페이지 레이아웃 --------------*/
+body{
+    /* padding: 40px; */
+    /* transition: 0.25s; */
+
+}
+#header {
+    position: fixed;
+    background: rgba(255, 255, 255, 0.586);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    top: 0;
+    left: 0px;
+    width: 200px;
+    height: 100%;
+    padding: 20px;
+    border-right: 0.1px solid #fff;
+    box-shadow: 0px 0px 50px 30px #0000000a;
+    z-index: 1;
+    text-align: center;
+    /* transition: all 0.25s; */
+}
+#header:hover{
+    left: 0;
+}
+
+#header h1 a{
+    font-size: 38px;
+    font-weight: 700;
+}
+/* javascript 01~04 사용중 */
+#main {
+    position: relative;
+    /* padding: 43px 0;
+    border-bottom: 1px dashed #dcdcdc; */
+}
+/* basic,command,counting 사용중 */
+#contents{
+    padding: 20px 0;
+    border-bottom: 1px dashed #dcdcdc;
+}
+#contents h2{
+    font-size: 20px;
+}
+#footer {
+    padding: 40px 0;
+    text-align: center;
+    display: none;
+}
+
+#footer a:hover {
+    text-decoration: underline;
+}
+
+/* 헤더 영역 --------------*/
+#header h1 {
+    font-size: 60px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid #00000017;
+    margin-bottom: 40px;
+}
+
+.header_nav {
+    height: 659px;
+    overflow-y: scroll;
+}
+.header_nav ul {
+    border-top: 1px solid rgba(0, 0, 0, 0.063);
+    padding-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.header_nav ul li {
+    display: inline-block;
+}
+
+/* 내가 눌려있는 페이지 */
+.header_nav ul li.active a{ 
+    background-color: #f2f2f7;
+    color: rgb(43, 19, 180);
+    border-radius: 5px;
+}
+
+/* 메뉴 설명 --------------*/
+.header_nav ul li a {
+    /* border: 1px solid #22222226; */
+    padding: 12px;
+    display: inline-block;
+    margin-bottom: 8px;
+    width: 115px;
+    text-align: center;
+    color: #0000009e;
+}
+
+.header_nav ul li a:hover {
+    /* a태그는 박스나 인라인같은것이 안먹는다 */
+    background-color: rgb(43, 19, 180);
+    color: #fff;
+    transition: 0.25s;
+    border-radius: 5px;
+}
+
+.header_nav ul li a:not(:hover){
+    /* transition: 0.25s; */
+}
+
+.header_nav .study {
+    margin-top: 10px;
+}
+
+.header_nav .study li {}
+.header_nav .study li a {
+    border-radius: 50px;
+    padding: 6px 30px;
+    background-color: #000;
+    color: #fff;
+}
+
+.header_nav .effect li a {
+    border-radius: 40px;
+    margin-top: 10px;
+}
+
+/* 메인 샘플 --------------*/
+.main_sample{
+    margin-top: 40px;
+    border-top: 1px dashed #dcdcdc;
+    padding-top: 40px;
+}
+
+/* 01 변수 : 데이터 저장 --------------*/
+.main_sample h3{
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+/* 01 변수 : 데이터 저장의 설명 --------------*/
+.main_sample p{
+    margin-bottom: 10px;
+    color: #666;
+}
+
+.main_sample .script{
+
+}
+
+.main_sample .result{
+    margin-bottom: 80px;
+    margin-top: 10px;
+    background-color: #f2f2f7;
+    padding: 10px;
+    border-radius: 5px;
+    color: #000;
+}
+
+.main_menu{
+    background-color: #f2f2f7;
+    border:1px solid #e1e1e6;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+/* intro_menu */
+.intro_menu {
+    position: absolute;
+    width: 50vw;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(15px);
+    background: rgba(255, 255, 255, 0.4);
+    padding: 3vw;
+    border-radius: 1vw;
+    border: 1px solid #fff;
+}
+.intro_menu a{
+    padding: 5px;
+    border-radius: 10px;
+}
+.intro_menu a:hover{
+    background-color: rgba(0, 0, 0, 0.224);
+    border-radius: 10px;
+    padding: 5px;
+    color: #fff;
+    transition: 0.2s;
+}
+.intro_menu a:not(:hover){
+    transition: 0.2s
+}
+
+.article {
+    padding: 2vw 0;
+    line-height: 1.6;
+}
+.article h2 {
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+.article h3 {
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+.article p{
+    margin-bottom: 10px;
+}
+.article .table{
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: collapse; /*겹친 선 없앰 */
+    margin-bottom: 10px;
+}
+.article .table tr th{
+    border: 1px solid #dedede;
+    padding: 10px;
+    font-weight: normal;
+    background-color: #f5f5f5;
+}
+.article .table tr td{
+    border: 1px solid #dedede;
+    padding: 10px;
+}
+.article .table .center{
+    text-align: center;
+}
+.article .box{
+    background-color: #f5f5f5;
+    padding: 10px;
+}
+.article .box2{
+    background-color: #ffffff;
+    padding: 10px;
+}
+
+
+/* sample */
+.sample{
+    margin-bottom: 80px;
+}
+
+.sample .table{
+    margin-bottom: 20px;
+}
+.sample .table table{
+    width: 100%;
+    border: 1px solid #e6e6e6;
+    text-align: center;
+}
+.sample .table table tr th{
+    font-weight: normal;
+    background-color: #f5f5f5;
+    padding: 3px;
+}
+.sample .table table tr td{
+    border: 1px solid #e6e6e6;
+    padding: 6px;
+}
+
+.sample .table table tr td[class*="_P"]{ /* zs*을 사용해 모든 클래스 선택 =을 사용해 "_P"만 포함되는걸 선택*/
+    /* background: #000; */
+    color: #fff;
+}
+
+.sample .table table tr td[class*="_P"]:hover{ /* zs*을 사용해 모든 클래스 선택 =을 사용해 "_P"만 포함되는걸 선택*/
+    /* background: #000; */
+    color: #000;
+    transition: 0.3s;
+    cursor: help;
+}
+
+.sample .table.left tr td {
+    text-align: left;
+}
+
+.sample .table.left .ce{
+    text-align: center;
+}
+
+.sample .box{
+    background-color: #f5f5f5;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    color: #666;
+}
+
+.sample .view{
+    border: 1px solid #e6e6e6;
+    padding: 30px 20px 20px 20px;
+}
+
+.sample .blue{
+    background-color: rgb(43, 19, 180);
+    padding: 20px 20px;
+    border-radius: 10px 10px 0 0;
+    margin-bottom: 0;
+    color: white;
+}
+
+.sample .sbox {
+    width: 400px;
+    height: 200px;
+    background-color: #ededed;
+    border: 1px solid rgb(43, 19, 180);
+    padding: 20px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto;
+
+    text-align: center;
+}
+
+.sample .sbox::after {
+    content: '';
+    width: 480px;
+    height: 280px;
+    border: 1px dashed rgb(43, 19, 180);
+    position: absolute;
+    left: -21px;
+    top: -21px;
+}
+.sample .sbox::before {
+    content: '';
+    width: 398px;
+    height: 198px;
+    border: 1px dashed rgb(43, 19, 180);
+    position: absolute;
+    left: 20px;
+    top: 20px;
+}
+
+.sample .sResult {
+    padding-top: 10px;
+    text-align: center;
+}
+.sample .button {
+    border: 1px solid #ededed;
+    border-top: 0;
+    padding: 20px;
+}
+
+
+.sample .button a{
+    border: 1px solid #ededed;
+    color: rgb(43, 19, 180);
+    border-radius: 40px;
+    padding: 10px 20px;
+    display: inline-block;
+    margin: 5px;
+}
+
+.sample .button a:hover{
+    background-color: rgb(43, 19, 180);
+    color: #fff;
+}
+
+@media (max-width: 800px){
+    .sample .table {
+        overflow-x: scroll;
+    }
+    .sample .table table {
+        width: 780px;
+    }
+    .sample .table table tr td[class*="_P"]{
+        color: #000;
+    }
+}
+
+
+/* 티스토리용 문서 */
+.document{
+    word-break: keep-all; /*글자로 끊어지지 않고 단어로 끊어짐*/
+}
+.document hr{
+    border: 0;
+    border-top: 1px dashed #dcdcdc;
+    margin-top: 45px;
+    margin-bottom: 45px;
+}
+.document i{ /* '프로그래밍 언어' 강조 관련 */
+    font-style: normal;
+    position: relative;
+}
+.document i::before{ /* 밑줄관련 */
+    content: '';
+    background-color: #4a02f12c;
+    width:100%;
+    height: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    border-radius: 20px;
+}
+.document .t_tit{
+    font-size: 30px;
+    line-height: 1.6;
+    margin-bottom: 5px;
+    font-weight: 400;
+}
+.document .t_tit2{
+    font-size: 22px;
+    line-height: 1.6;
+    margin-top: 50px;
+    margin-bottom: 5px;
+    font-weight: 400;
+}
+.document .t_tit3{
+    font-size: 16px;
+    line-height: 1.6;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-weight: 400;
+    /*font-weight: 700; 폰트 진하게*/
+}
+.document .t_desc{
+    font-size: 16px;
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 10px !important;
+}
+
+.document .t_desc2{
+    font-size: 16px;
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 10px !important;
+    padding: 15px 20px !important;
+    border-left: 4px solid #4a02f1;
+    background-color: #f9f9f9;
+}
+
+.document .t_desc2_css{
+    font-size: 16px;
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 10px !important;
+    padding: 15px 20px !important;
+    border-left: 4px solid #3f62a6;
+    background-color: #f9f9f9;
+}
+
+.document .t_desc2_html{
+    font-size: 16px;
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 10px !important;
+    padding: 15px 20px !important;
+    border-left: 4px solid #7d005e;
+    background-color: #f9f9f9;
+}
+
+.document .t_desc2_presentation{
+    
+    font-size: 16px;
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 10px !important;
+    padding: 15px 20px !important;
+    border-left: 4px solid #206973;
+    background-color: #f9f9f9;
+}
+
+.document .t_box{
+    padding: 20px !important;
+    background-color: #f9f9f9;
+    margin-bottom: 10px;
+    color: #666;
+    border-radius: 5px;
+}
+
+/* 표 */
+.document .t_table{
+    border: 1px solid #dcdcdc;
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+.document .t_table tr th{
+    background-color: #f9f9f9;
+}
+
+.document .t_table tr th,
+.document .t_table tr td{
+    border: 1px solid #dcdcdc;
+    font-weight: normal;
+    padding: 8px 10px;
+    color: #666;
+}
+.document .t_table .ce {
+    text-align: center;
+}
+
+.document .t_iframe{
+    position: relative;
+    padding-top: 56%;
+    width: 100%;
+    height: 0;
+
+}
+.document .t_iframe iframe{
+    border: 1px solid rgba(0,0,0,0.1);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.document .t_link a{
+    display: block;
+    width: 200px;
+    background: #f5f5f5;
+    margin: 40px auto;
+    border-radius: 5px;
+    text-align: center;
+    padding: 10px;
+    /* transition: all 0.3s; */
+}
+.document .t_link a:hover{
+    color: #fff;
+    background: #4a02f1;
+    box-shadow: 2px 2px 20px 5px #4a02f166;
+}
+
+.container {
+        max-width: 1160px;
+        margin: 0 auto;
+        padding: 40px 0px 100px 245px;
+        /* transition: 0.25s; */
+}
+
+.hover_button{
+    position: fixed;
+    top: 0;
+    left: 200px;
+    width: 50px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.557);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    padding: 30px 19px;
+    border-radius: 500px;
+    box-shadow: 0px 10px 20px 5px rgba(0, 0, 0, 0.143);
+}
+/* 표 끝 */
+
+.extend_menu{
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    background-color: #1c0d80c2;
+    padding: 23px 0px 23px 0px;
+    text-align: center;
+    color: #fff;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    box-shadow: 0px 10px 20px 2px rgb(0 0 0 / 27%);
+    z-index: 1;
+}
+
+.extend_menu:hover{
+    transform: translateX(15px);
+}
+
+/* 다크모드 구현 */
+
+.dark{
+    /* display: none; */
+    background: rgb(0, 0, 0);
+    color: #fff !important;
+}
+.hide{
+    display: none;
+}
+
+.extend_menu_opacity_hide{
+    opacity: 0;
+    transition: all 0.25s;
+}
+
+.extend_menu_opacity_show{
+    opacity: 1;
+    transition: all 0.25s;
+}
+
+/* 세로 스크롤 */
+.header_nav::-webkit-scrollbar {
+    width: 4px;
+    border-radius: 20px;
+}
+
+.header_nav:hover::-webkit-scrollbar {
+    opacity: 1;
+}
+
+.header_nav::-webkit-scrollbar-thumb {
+    /* background-color: hsl(337deg 87% 54%); */
+    background-clip: padding-box;
+}
+
+.header_nav::-webkit-scrollbar-track {
+    background-color: transparent; /*스크롤바 트랙 색상*/
+}
+
+#header h1 a{
+    font-weight: normal;
+    background-image: -webkit-linear-gradient(92deg, #f35626, #feab3a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-animation: hue 10s infinite linear;
+}
+
+.gradient_color_test {
+    /* font-family: Helvetica Neue, Helvetica, Arial, sans-serif; */
+    text-align: center;
+    /* color: #f35626; */
+    background-image: -webkit-linear-gradient(92deg, #f35626, #feab3a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-animation: hue 10s infinite linear;
+}
+
+.search__input{
+    border: 1px solid #ededed;
+}
+
+@-webkit-keyframes hue {
+    from {
+        -webkit-filter: hue-rotate(0deg);
+    }
+
+    to {
+        -webkit-filter: hue-rotate(-360deg);
+    }
+}
+
+/* 가로 스크롤 */
+body::-webkit-scrollbar {
+    height: 4px;
+    border-radius: 20px;
+    width: 4px;
+    background-color: transparent;
+}
+
+body:hover::-webkit-scrollbar {
+    opacity: 1;
+    background-color: transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: hsl(337deg 87% 54%); /*스크롤바의 색상*/
+    background-clip: padding-box;
+}
+
+body::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0); /*스크롤바 트랙 색상*/
+}
+
+
+@media (max-width: 800px){
+    body {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 600px){
+    .intro_menu{
+        width: 90%;
+        padding: 14px;
+    }
+    .intro_menu li{
+        font-size: 16px;
+    }
+    .intro_menu li a{
+        font-size: 16px;
+    }
+    
+}

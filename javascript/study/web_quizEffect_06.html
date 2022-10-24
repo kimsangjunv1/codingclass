@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 요소 객체</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li class="active"><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="j../avascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="effect">
+                <li><a href="effect/searchEffect01.html">검색 효과</a></li>
+                <li><a href="effect/quizEffect01.html">퀴즈 효과</a></li>
+                <li><a href="effect/textEffect01.html">텍스트 효과</a></li>
+                <li><a href="effect/mouseEffect01.html">마우스 효과</a></li>
+                <li><a href="effect/sliderEffect01.html">슬라이드 효과</a></li>
+                <li><a href="effect/parallaxEffect01.html">패럴랙스 효과</a></li>
+                <li><a href="effect/gameEffect01.html">게임 효과</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="operator.html">연산자</a></li>
+                <li><a href="for.html">반복문</a></li>
+                <li><a href="if.html">조건문</a></li>
+                <li><a href="type.html">데이터 타입</a></li>
+                <li><a href="function.html">함수</a></li>
+                <li><a href="var.html">지역변수/전역변수</a></li>
+                <li><a href="element.html">요소 선택</a></li>
+                <li><a href="web_search_effect.html">서치 이펙트</a></li>
+                <li><a href="web_slice.html">slice/substring/substr</a></li>
+                <li><a href="web_vector_bitmap.html">벡터와 비트맵</a></li>
+                <li><a href="web_standards.html">웹 표준</a></li>
+                <li><a href="web_pop_join_push.html">POP/JOIN/PUSH</a></li>
+                <li><a href="web_naejang.html">내장 함수</a></li>
+                <li><a href="web_media_query.html">미디어쿼리</a></li>
+                <li><a href="web_jeongyu.html">정규 표현식</a></li>
+                <li><a href="web_indexOf.html">indexOf()</a></li>
+                <li><a href="web_homework.html">사이트 예제 만들기</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <div class="main_menu">
+            <ul>
+                <!--ul>li*17>a[href="#"]{$$} 사용함-->
+                <li><a href="#">01. 요소 메서드 : 선택자 : document.querySelector() : 요소 선택자</a></li>
+                <!--요즘 스타일-->
+                <li><a href="#">01. 요소 메서드 : 선택자 : document.querySelectorAll() : 모든 요소 선택자</a></li>
+                <!--요즘 스타일-->
+                <li><a href="#">01. 요소 메서드 : 선택자 : document.getElementById() : 아이디 요소 선택자</a></li>
+                <!--옛날 스타일-->
+                <li><a href="#">01. 요소 메서드 : 선택자 : document.getElementByClassName() : 클래스 요소 선택자</a></li>
+                <!--옛날 스타일-->
+                <li><a href="#">01. 요소 메서드 : 선택자 : document.getTagName() : 태그 요소 선택자</a></li>
+                <br>
+                <li><a href="#">01. 요소 메서드 : 텍스트 : innerText() : 요소에 텍스트 설정하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 텍스트 : textContent() : 요소에 텍스트 설정하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 텍스트 : innerHTML() : 요소에 텍스트(태그인식) 설정하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 텍스트 : outerHTML() : 요소에 텍스트(태그인식) 설정하기</a></li>
+                <br>
+                <li><a href="#">01. 요소 메서드 : 클래스 : classList.add() : 클래스 추가하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 클래스 : classList.remove() : 클래스 삭제하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 클래스 : classList.toggle() : 클래스 추가/삭제하기</a></li>
+                <li><a href="#">01. 요소 메서드 : 클래스 : classList.contains() : 클래스 존재 여부 확인하기</a></li>
+            </ul>
+        </div>
+        <main id="main">
+            <div class="document">
+                <h2 class="t_tit">Quiz Effect 06</h2>
+                <p class="t_desc2_css">여러 문제에 정답을 체크하고, 그 답이 맞았는지 틀렸는지 구분하고, 총 몇개 중 몇개 맞았는지 구분하여 퀴즈 이펙트 05번을 구현해보겠습니다</p>
+                <hr>
+                
+                <h3 class="t_tit2">완성 예시</h3>
+                <div class="t_iframe" style="min-height : 1000px; padding-top:0;">
+                    <iframe src="https://kimsangjunv1.github.io/coding/javascript/effect/quizEffect06.html"
+                        frameborder="0"></iframe>
+                </div>
+                <hr>
+
+                <!-- 1번 -->
+                <div id="sample01" class="sample">
+                    <h2 class="t_tit2">HTML</h2>
+                    <p class="t_desc2_css">데이터 및 기본 구조를 아래와 같이 제작해줍니다.</p>
+                    <details>
+                        <summary class="t_box">HTML 구조 전체보기</summary>
+                        <div class="script">
+                            <div class="t_code">
+                                <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+<pre><code class="language-html">&lt;main id="main"&gt;
+    &lt;div class="quiz__wrap"&gt;
+        &lt;div class="quiz"&gt;
+            &lt;span class="quiz__type"&gt;${question.answerType}&lt;/span&gt;
+            &lt;h2 class="quiz__question"&gt;
+                &lt;!-- &lt;span class="number"&gt;${question.answerNum+". "}&lt;/span&gt;
+                &lt;div class="ask"&gt;${question.answerAsk}&lt;/div&gt; --&gt;
+            &lt;/h2&gt;
+            &lt;div class="quiz__view"&gt;
+                &lt;div class="true"&gt;정답입니다!&lt;/div&gt;
+                &lt;div class="false"&gt;틀렸습니다!&lt;/div&gt;
+                &lt;div class="dog"&gt;
+                    &lt;div class="head"&gt;
+                        &lt;div class="ears"&gt;&lt;/div&gt;
+                        &lt;div class="face"&gt;&lt;/div&gt;
+                        &lt;div class="eyes"&gt;
+                            &lt;div class="teardrop"&gt;&lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class="nose"&gt;&lt;/div&gt;
+                        &lt;div class="mouth"&gt;
+                            &lt;div class="tongue"&gt;&lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class="chin"&gt;&lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class="body"&gt;
+                        &lt;div class="tail"&gt;&lt;/div&gt;
+                        &lt;div class="legs"&gt;&lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="quiz__answer"&gt;
+                &lt;div class="quiz__selects"&gt;
+                    
+                &lt;/div&gt;
+                &lt;div class="result"&gt;&lt;/div&gt;
+                &lt;button class="confirm"&gt;다음 문제 보기 🫠&lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/main&gt;
+</code></pre>
+                            </div>
+                        </div>
+                    </details>
+                    <hr>
+                    <h2 class="t_tit2">Javascript</h2>
+                    <p class="t_desc2_css">
+                        quizScore 변수에 정답을 저장해서 맞은 갯수가 몇개인지 알려주는 문제 출제 예제를 만들어보겠습니다!
+                    </p>
+                    <h2 class="t_tit2">확인 버튼을 통해 다양한 성적 정보 알려주기</h2>
+                    <p class="t_box">
+                        하단의 스크립트를 통해 확인 버튼을 누르면 맞은개수, 총점, 탈락여부 알려주게 구성하였습니다.
+                    </p>
+                    <div class="script">
+                        <div class="t_code">
+                            <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+<pre><code class="language-js">
+// 정답 확인 버튼
+const answerQuiz = () =&gt; {
+    if(quizCount === quizInfo.length-1){
+        if(Math.floor(100/quizInfo.length*quizScore)&gt;=60){
+            quizConfirm.textContent = `총 ${quizInfo.length} 문제 중에 ${quizScore} 문제를 맞추었으며 총점 ${Math.floor(100/quizInfo.length*quizScore)} 점 합격 입니다.`
+        } else {
+            quizConfirm.textContent = `총 ${quizInfo.length} 문제 중에 ${quizScore} 문제를 맞추었으며 총점 ${Math.floor(100/quizInfo.length*quizScore)} 점 불합격 입니다.`
+        }
+    }
+    quizCount++
+    updateQuiz(quizCount);
+    quizView.classList.remove("like", "dislike");
+}
+</code></pre>
+                        </div>
+                    </div>
+                    <hr>
+                    <h2 class="t_tit2">전체적인 스크립트</h2>
+                    <p class="t_desc2_css">
+                        하단의 스크립트를 통해 전체적인 js 코드를 구성합니다.
+                    </p>
+                    <div class="script">
+                        <div class="t_code">
+                            <!-- 3. 하단의 클래스를 통해 스크립트(js) 적용 -->
+<pre><code class="language-js">//문제정보
+    const quizInfo = [
+        { //01번
+            answerType: "웹디자인 기능사 2014년 04회",
+            answerNum: "1",
+            answerAsk: "주전자, 냉장고, 자동차를 디자인하는 디자인 영역은?",
+            answerChoice: [
+                "패션디자인",
+                "제품디자인",
+                "환경디자인",
+                "시각디자인"
+            ],
+            answerResult: "제품디자인",
+            answerEx: "각 제품에 대한 디자인은 제품 디자인 영역이라고 합니다."
+        },
+        { //02번
+            answerType: "웹디자인 기능사 2014년 04회",
+            answerNum: "2",
+            answerAsk: "따뜻한 색체는 차가운 색체와 함께 있을 때 더욱 따뜻하게 느 껴지고, 차가운 색체도 따뜻한 색채와 함께 있을 때 더욱 호 소력이 강해지는 색의 대비로 옳은 것은?",
+            answerChoice: [
+                "채도대비",
+                "계시대비",
+                "명도대비",
+                "한란대비"
+            ],
+            answerResult: "한란대비",
+            answerEx: "색상을 순서를 정하여 연속적으로 시간차를 두고 보면서 각각 색이 보이는 변화로 음성잔상과 유사한 현상이며, 먼저 본 색의 잔상에 영향을 받습니다."
+        },
+        { //03번
+            answerType: "웹디자인 기능사 2014년 04회",
+            answerNum: "3",
+            answerAsk: "선(Line)에 대한 설명으로 바른 것은?",
+            answerChoice: [
+                "면의 한계나 교차에 의해 생기는 선은 적극적인 선이다.",
+                "수평선은 고결, 희망, 상승감을 나타낸다.",
+                "점과 점이 이어져 생기는 선은 소극적인 선이다.",
+                "고딕 건축의 고결함은 수직선을 대표한다."
+            ],
+            answerResult: "고딕 건축의 고결함은 수직선을 대표한다.",
+            answerEx: "1~3번은 추상적인 개념의 선이고 4번은 현실의 선을 이야기 합니다.."
+        },
+        // { //04번
+        //     answerType: "웹디자인 기능사 2014년 04회",
+        //     answerNum: "4",
+        //     answerAsk: "[그림 설명 : 높이/넓이 동일한 정사각형 가운데 원이 있고 그 원 주위에 붙은 작은 원들이 그려져 있고 또 한가지는 동일한 조건에 큰 원들이 그려져 있는 그림] 다음 두 개의 꽃 모양 중심에 있는 원의 실제 크기는 동일하 다. 그런데 위쪽의 원이 아래쪽보다 커 보이는 현상은?",
+        //     answerChoice: [
+        //         "주변과의 대비에 의한 착시현상",
+        //         "원근에 의한 착시현상",
+        //         "폐쇄원리에 의한 착시현상",
+        //         "연속원리에 의한 착시현상"
+        //     ],
+        //     answerResult: "주변과의 대비에 의한 착시현상",
+        //     answerEx: "주변의 사물로 인해 인간의 뇌가 착각을 일으켜 비교하는 대상의 상대적인 크기가 작아보이는 효과 입니다."
+        // },
+        // { //05번
+        //     answerType: "웹디자인 기능사 2014년 04회",
+        //     answerNum: "5",
+        //     answerAsk: "디자인 원리 중 구성 형식에서 중요한 역할을 하며, 부피, 중량 등 물리적인 구조와 색채에서 시각적인 안정감을 이룬 것을 말하며, 크게 대칭과 비대칭, 방사대칭으로 구분하는 것은?",
+        //     answerChoice: [
+        //         "반복",
+        //         "균형",
+        //         "조화",
+        //         "대비"
+        //     ],
+        //     answerResult: "균형",
+        //     answerEx: "시각적인 안정감을 위해서는 균형이 항상 중요합니다."
+        // },
+        // { //06번
+        //     answerType: "웹디자인 기능사 2014년 04회",
+        //     answerNum: "6",
+        //     answerAsk: "V(디자인가치)=P(성능)/C(비용) 와 관계있는 디자인 조건은?",
+        //     answerChoice: [
+        //         "합목적성",
+        //         "경제성",
+        //         "심미성",
+        //         "독창성"
+        //     ],
+        //     answerResult: "경제성",
+        //     answerEx: "전체적인 가치를 따지기 위해서는 조건 중 경제성입니다.."
+        // }
+    ];
+
+    const quizQuestion = document.querySelector(".quiz__question");                 //문제 번호, 질문
+    const quizSelects = document.querySelector(".quiz__selects")                    //객관식 보기
+    const quizType = document.querySelector(".quiz__type")                  //객관식보기
+    const quizResult = document.querySelector(".quiz__answer .result")      //해설
+    const quizConfirm = document.querySelector(".quiz__answer .confirm")     //정답확인버튼
+    const quizView = document.querySelector(".quiz__view")                  //강아지
+
+    let quizCount = 0;
+    let quizScore = "";
+    let ququ = Math.floor(100/quizInfo.length*quizScore)
+
+    //문제 출력
+    const updateQuiz = (index) =&gt; {
+        const questionTag = `
+            &lt;span class="number"&gt;${quizInfo[index].answerNum}&lt;/span&gt;
+            &lt;div class="ask"&gt;${quizInfo[index].answerAsk}&lt;/div&gt;`;
+        const choiceTag = `
+        &lt;label for="select1"&gt;
+            &lt;input type="radio" id="select1" class="select" name="select" value="1"&gt;
+            &lt;span class="choice"&gt;${quizInfo[index].answerChoice[0]}&lt;/span&gt;
+        &lt;/label&gt;
+        &lt;label for="select2"&gt;
+            &lt;input type="radio" id="select2" class="select" name="select" value="2"&gt;
+            &lt;span class="choice"&gt;${quizInfo[index].answerChoice[1]}&lt;/span&gt;
+        &lt;/label&gt;
+        &lt;label for="select3"&gt;
+            &lt;input type="radio" id="select3" class="select" name="select" value="3"&gt;
+            &lt;span class="choice"&gt;${quizInfo[index].answerChoice[2]}&lt;/span&gt;
+        &lt;/label&gt;
+        &lt;label for="select4"&gt;
+            &lt;input type="radio" id="select4" class="select" name="select" value="4"&gt;
+            &lt;span class="choice"&gt;${quizInfo[index].answerChoice[3]}&lt;/span&gt;
+        &lt;/label&gt;`;
+
+        //문제출력
+
+        quizType.innerHTML = quizInfo[index].answerType;    //퀴즈 유형
+        quizQuestion.innerHTML = questionTag;           //번호 질문
+        quizSelects.innerHTML = choiceTag;              //객관식
+        quizResult.innerHTML = quizInfo[index].answerEx;    //해설
+
+        const quizChoice = quizSelects.querySelectorAll(".choice")
+
+        for(let i=0; i&lt;quizChoice.length; i++){
+            quizChoice[i].setAttribute("onclick", "choiceSelected(this)")
+        }
+
+        // 문제, 해설 숨기기
+        quizResult.style.display="none";
+        quizConfirm.style.display="none";
+
+        // document.querySelector(".quiz__type").innerHTML=quizInfo[0].answerType
+    }
+    updateQuiz(quizCount);
+
+    const choiceSelected = (answer) =&gt; {
+        let userAnswer = answer.textContent;
+        let currentAnswer = quizInfo[quizCount].answerResult;
+        
+        if(userAnswer == currentAnswer){
+            console.log("정답");
+            quizView.classList.add("like")
+            quizScore++
+        } else {
+            console.log("오답");
+            quizView.classList.add("dislike")
+            quizResult.style.display="block";
+        }
+        quizConfirm.style.display = "block"
+    }
+    
+
+    // 정답 확인 버튼
+    const answerQuiz = () =&gt; {
+        if(quizCount === quizInfo.length-1){
+            if(Math.floor(100/quizInfo.length*quizScore)&gt;=60){
+                quizConfirm.textContent = `총 ${quizInfo.length} 문제 중에 ${quizScore} 문제를 맞추었으며 총점 ${Math.floor(100/quizInfo.length*quizScore)} 점 합격 입니다.`
+            } else {
+                quizConfirm.textContent = `총 ${quizInfo.length} 문제 중에 ${quizScore} 문제를 맞추었으며 총점 ${Math.floor(100/quizInfo.length*quizScore)} 점 불합격 입니다.`
+            }
+        }
+        quizCount++
+        updateQuiz(quizCount);
+        quizView.classList.remove("like", "dislike");
+
+        // quizConfirm.textContent = "총"+quizInfo.length+"문제 중에"+quizScore+"문제를 맞추었습니다."
+        //마지막 문제
+    }
+
+    quizConfirm.addEventListener("click", answerQuiz)
+</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div style="display:flex; justify-content:space-between; margin-left:20%; margin-right:20%;">
+                    <div class="t_link">
+                        <a href="https://github.com/kimsangjunv1/coding/blob/main/javascript/effect/quizEffect06.html" target="blank">원본 소스 보기</a>
+                    </div>
+                    <div class="t_link">
+                        <a href="https://kimsangjunv1.github.io/coding/javascript/effect/quizEffect06.html" target="blank">원본 페이지 보기</a>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <img src="" alt="">
+        <!-- //main -->
+
+        <footer id="footer">
+            <a href="mailto:webstoryboy@naver.com">webstoryboy@naver.com</a>
+        </footer>
+        <!-- //footer -->
+        <script src="../assets/js/highlight.min.js"></script>
+        <script>
+            hljs.highlightAll();
+        </script>
+</body>
+
+</html>
