@@ -68,6 +68,7 @@ html {
     letter-spacing: 10px;
     margin-top: -60px;
     padding-left: 10px;
+    z-index: -111;
   }
   #title span {
     background: -webkit-linear-gradient(#ffffff00, #ffffffb0);

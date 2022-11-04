@@ -14,9 +14,9 @@ let memoryTimeReamining = 120,  // 남은 시간
     point = 100;
 
 let sound = [
-    "../../../assets/music/success.m4a",
-    "../../../assets/music/fail.m4a",
-    "../../../assets/music/success.m4a"
+    "../../assets/music/success.m4a",
+    "../../assets/music/fail.m4a",
+    "../../assets/music/success.m4a"
 ]
 
 let soundMatch = new Audio(sound[0]);
