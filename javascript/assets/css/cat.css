@@ -277,12 +277,4 @@
     right: 10px;
     font-size: 10px;
   }
-  
-  a {
-    color: white;
-    text-decoration: none;
-  }
-  
-  a:hover {
-    text-decoration: underline;
-  }
+ 
