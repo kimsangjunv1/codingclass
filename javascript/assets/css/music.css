@@ -3,15 +3,16 @@
 }
 .music__inner {
     width: 450px;
-    background-color: #351e54e0;
+    background-color: #1f2645;
     backdrop-filter: blur(8px);
     position: absolute;
     right: 100px;
     top: 100px;
     padding: 26px;
     /* padding-top: 10px; */
-    box-shadow: 0px 5px 26px 5px #300e504a;
+    box-shadow: 0px 5px 20px 5px #0000004a;
     overflow: hidden;
+    z-index: 1;
 }
 .music__inner::before{
     content: '';
@@ -30,6 +31,7 @@
     align-items: center;
     justify-content: space-between;
     color: #fff;
+    text-shadow: 0px 3px #000;
 }
 .music__header img{
     width: 20px;
@@ -256,7 +258,7 @@ img.two{
     overflow-y: scroll;
 }
 .music__list ul::-webkit-scrollbar-thumb{
-    background-color: #6808ca;
+    background-color: #343f6d;
 }
 .music__list ul::-webkit-scrollbar{
     background: transparent;
@@ -282,7 +284,7 @@ img.two{
     overflow: hidden;
     width: 289px;
     white-space: nowrap;
-    color: #41057e;
+    color: #343f6d;
 }
 .music__list li em{
     font-style: normal;
@@ -322,6 +324,24 @@ img.two{
     filter: invert(1);
     width: 22px;
 }
+.sourceContMemory_header{
+    background: #1f2645;
+    width: 100%;
+    height: 40px;
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+    display: flex;
+    justify-content: space-between;
+    padding: 24px;
+    align-items: center;
+    color: #fff;
+}
+.sourceContMemory_header img{
+    filter: invert(1);
+    transform: scale(0.7);
+    width: 22px;
+    /* cursor: pointer; */
+}
 .sourceOpen{
     width: 100%;
     height: 100%;
@@ -329,8 +349,8 @@ img.two{
 
 .volumeCont{
     position: absolute;
-    background: #342c4a8f;
-    padding: 10px 10px 6px 10px;
+    background: #0000008f;
+    padding: 7px 14px;
     z-index: 1000;
     backdrop-filter: blur(19px);
     top: 23px;
