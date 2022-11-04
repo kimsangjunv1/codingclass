@@ -636,6 +636,14 @@
   left: 60px;
   top: 98px;
 }
+.image-wrap:hover{
+  transform: scale(1.05);
+  transition: 0.25s;
+}
+.image-wrap:not(:hover){
+  transition: 0.25s;
+
+}
 
 .image-wrap .hover-wrap {
   position: absolute;
@@ -716,7 +724,6 @@ overlay-text-thumb {
 }
 
 .image-wrap .hover-wrap .overlay-text-thumb-donut.bts {
-  background: #ffffff2b;
   color: #fff;
   width: auto;
   left: 50%;
@@ -730,13 +737,13 @@ overlay-text-thumb {
   white-space: nowrap;
   font-weight: normal;
   font-size: 20px;
-  border: 1px solid #ffffff1c;
+  border: 1px solid #ffffff17;
 }
 .image-wrap .hover-wrap .overlay-text-thumb-donut.bts:hover {
-  background: #3c33b1;
+  background: #fb2359;
 }
 .image-wrap .hover-wrap .overlay-text-thumb1-donut.bts {
-  background: #23213c;
+  background: #19010cb8;
   color: #fff;
   width: auto;
   left: 50%;
@@ -747,10 +754,10 @@ overlay-text-thumb {
   border-radius: 50px;
   line-height: 1;
   height: auto;
-  border: 0.1px solid rgba(255, 255, 255, 0.283);
+  border: 0.1px solid rgb(255 255 255 / 14%);
 }
 .image-wrap .hover-wrap .overlay-text-thumb1-donut.bts:hover {
-  background: #3c33b1;
+  background: #fb265b;
 }
 
 .image-wrap .hover-wrap .overlay-text-thumb1-donut {
