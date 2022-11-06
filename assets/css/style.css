@@ -546,9 +546,11 @@
 }
 .gridly ul {
   overflow: hidden;
-  /* padding-left: 18px; */
-  margin-bottom: 2px;
-  height: 20px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .gridly ul.le {
   padding-left: 12px;
@@ -2640,12 +2642,10 @@ div#options{
   z-index: 1111;
   left: 50%;
   transform: translate( -50%,0);
-  bottom: 20px;
-  border-radius: 2000px;
-  background: #ffffffd1;
-  backdrop-filter: blur(5px);
+  bottom: 0;
+  width: 100%;
+  background: linear-gradient(0deg, white, transparent);
   -webkit-backdrop-filter: blur(5px);
-  border: 1px solid #00000012;
 }
 
 div#options ul li a{
@@ -2657,14 +2657,18 @@ div#customizing{
 }
 
 .all_info{
-  display: flex;
+  display: inline-flex;
   justify-content: center;
   height: 13px;
   line-height: 1;
   margin-bottom: 10px;
+  background: #fb2e62;
+  border-radius: 100px;
+  padding: 5px 10px;
+  /* color: #fff; */
 }
 .all_info span{
-  color: #00000078;
+  color: #fff;
   text-align: center;
   font-size: 12px;
 }
