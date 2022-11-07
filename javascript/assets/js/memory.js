@@ -3,6 +3,7 @@
 // 03 두개의 카드 뒤집기 확인하기 (첫번째, 두번째)
 
 const memoryWrap = document.querySelector(".memory__wrap");
+const memoryCard = memoryWrap.querySelector(".memory__card");
 const memoryCards = memoryWrap.querySelectorAll(".cards li");
 
 let cardOne, cardTwo;
@@ -53,10 +54,9 @@ function matchCards(img1, img2){
 
         if(matchedCard == 8){
             // alert("게임오버");
-            // soundUnSuccess.play();
-            // document.querySelector(".memory_end").style.display="block";
+            soundUnSuccess.play();
+            memoryCard.style.pointerEvents = "none";
             endGame();
-            // timeReamining = 120;  // 시간
         }
         cardOne.removeEventListener("click", flipCard);
         cardTwo.removeEventListener("click", flipCard);
@@ -88,7 +88,7 @@ function matchCards(img1, img2){
 
 // 게임종료
 function endGame(){
-    alert("게임오버");
+    // alert("게임오버");
     soundUnSuccess.play();
     document.querySelector(".memory_end").style.display="flex";
     document.querySelector(".memory_end").style.transform="translateY(0px)";
@@ -98,11 +98,9 @@ function endGame(){
 function reduceTimes(){
     memoryTimeReamining--;
     if(memoryTimeReamining == 0){
-        // matchedCard=8;
         document.querySelector(".memory_end").style.display="block";
         endGame()
     }
-    // soundUnSuccess.play();
     
     document.querySelector(".memory_desc i").innerText = displayTimes();
 }
@@ -128,9 +126,9 @@ function shuffleCard(){
     matchedCard = 0;
     point=100;
     
+    clearInterval(memoryTimeInterval)
     memoryTimeInterval = setInterval(reduceTimes, 1000);
     memoryTimeReamining=20;
-    clearInterval(memoryTimeInterval)
 
 
     let arr = [2,3,4,5,6,7,8,9,2,3,4,5,6,7,8,9];
@@ -139,13 +137,17 @@ function shuffleCard(){
     memoryCards.forEach((card, index)=>{
         card.classList.remove("flip");
         
-        setTimeout((e,i)=>{
+        setTimeout(()=>{
             card.classList.add("flip");
         }, 200 * index)
 
-        setTimeout((e,i)=>{
+        setTimeout(()=>{
             card.classList.remove("flip");
         }, 4000);
+
+        setTimeout(() => {
+            memoryCard.style.pointerEvents = "auto";
+        }, 200 * index + 5000);
 
         let imgTag = card.querySelector(".back img");
         imgTag.src = `../assets/memory/${arr[index]}.png`
@@ -167,11 +169,22 @@ memoryCards.forEach((card,i)=>{
 document.querySelector(".icon2").addEventListener("click",()=>{
     document.querySelector(".sourceContMemory").style.display="block";
     document.querySelector(".memory_begin").style.transform="translateY(0px)";
+    clearInterval(memoryTimeInterval)
+    
     // shuffleCard();
 })
 
+// 카드 게임 닫을때
 document.querySelector(".sourceContMemory_header img").addEventListener("click", ()=>{
     document.querySelector(".sourceContMemory").style.display="none";
+    clearInterval(memoryTimeInterval)
+    memoryReset();
+
+    // memoryTimeReamining = 120,  // 남은 시간
+    // disableDeck = false;
+    // matchedCard = 0;
+    document.querySelector(".memory_end").style.display="none";
+    document.querySelector(".memory_end").style.transform="translateY(1000px)";
 })
 
 document.querySelector(".memory_begin p:nth-child(3)").addEventListener("click", ()=>{
@@ -181,17 +194,27 @@ document.querySelector(".memory_begin p:nth-child(3)").addEventListener("click",
     shuffleCard();
 })
 
+// 카드 게임 재시작
 document.querySelector(".memory_restart").addEventListener("click", ()=>{
     document.querySelector(".memory_end").style.transform="translateY(1000px)";
-    // memoryTimeInterval = setInterval(reduceTimes, 1000);
-    // memoryTimeReamining=120;
-    // clearInterval(memoryTimeInterval)
     shuffleCard();
 })
 
-document.querySelector(".icon5").addEventListener("click",()=>{
-    document.querySelector(".sourceCont").style.display="block";
-})
-document.querySelector(".sourceCont_header img").addEventListener("click",()=>{
-    document.querySelector(".sourceCont").style.display="none";
-})
+// document.querySelector(".icon5").addEventListener("click",()=>{
+//     document.querySelector(".sourceCont").style.display="block";
+// })
+// document.querySelector(".sourceCont_header img").addEventListener("click",()=>{
+//     document.querySelector(".sourceCont").style.display="none";
+// })
+
+
+function memoryReset() {
+    cardOne = cardTwo = "";
+    disableDeck = false;
+    matchedCard = 0;
+    matchScore = 100;
+    score.innerText = "0";
+    memoryCards.forEach((card) => {
+        card.classList.remove("flip");
+    });
+}
