@@ -528,6 +528,9 @@ const cssProperty = [
         //시간 정지
         clearInterval(timeInterval)
 
+        //점수 출력
+        document.querySelector(".now_final").innerText=score;
+
         // 메시지 출력
         searchResultWrap.classList.add("show");
         let point = Math.round(score / cssProperty.length * 100);
@@ -585,6 +588,18 @@ const cssProperty = [
     });
     
     sourceWordClose.addEventListener("click", ()=>{
+
+        score=0;
+        searchScoreNow.innerText = score;
+        document.querySelector(".now_final").innerText=score;
+        searchStart.style.pointerEvents = "auto";
+        
+        // show 제거
+        searchResultWrap.classList.remove("show");
+            
+        // 정답 초기화
+        searchInput.value = "";
+
         sourceWordOpen.style.display="none";
 
         // 시간 초기화

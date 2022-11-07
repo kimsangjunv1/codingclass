@@ -128,7 +128,7 @@ function shuffleCard(){
     
     clearInterval(memoryTimeInterval)
     memoryTimeInterval = setInterval(reduceTimes, 1000);
-    memoryTimeReamining=20;
+    memoryTimeReamining=120;
 
 
     let arr = [2,3,4,5,6,7,8,9,2,3,4,5,6,7,8,9];
