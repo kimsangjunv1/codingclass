@@ -100,6 +100,9 @@ body {
 .icon5{
     top: 530px;
 }
+.icon6{
+    top: 670px;
+}
 .cont{
     display: flex;
     flex-direction: column;
@@ -119,7 +122,8 @@ body {
 .icon2,
 .icon3,
 .icon4,
-.icon5{
+.icon5,
+.icon6{
     position: absolute;
     width: 100px;
     right: 20px;
@@ -130,7 +134,8 @@ body {
 .icon2 img,
 .icon3 img,
 .icon4 img,
-.icon5 img{
+.icon5 img,
+.icon6 img{
     width: 54px;
     z-index: -1;
 }
@@ -139,7 +144,8 @@ body {
 .icon2 span,
 .icon3 span,
 .icon4 span,
-.icon5 span{
+.icon5 span,
+.icon6 span{
     background: #485db600;
     color: #fff;
     font-size: 14px;

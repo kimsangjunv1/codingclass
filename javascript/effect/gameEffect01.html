@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="../assets/css/music.css">
     <link rel="stylesheet" href="../assets/css/search_copy.css">
     <link rel="stylesheet" href="../assets/css/memory.css">
+    <link rel="stylesheet" href="../assets/css/tetrisGame.css">
     <link rel="stylesheet" href="../assets/css/cat.css">
     <link rel="stylesheet" href="../assets/css/universe.css">
 
@@ -38,7 +39,9 @@
     <div class="mouse__cursor">
         <!-- <img src="../../assets/img/mouseCursor.png" alt="유지"> -->
     </div>
-    <div class="sourceContWord zIndex">
+
+    <!-- 속성 맞추기 -->
+    <div class="sourceContWord">
         <div class="sourceContWord_header">
             <p>CSS 속성 맞추기</p>
             <img src="../assets/music_img/MusicListCloseBtn.png" alt="">
@@ -111,14 +114,6 @@
         </div>
     </div>
 
-    <!-- 소스보기 -->
-    <!-- <div class="sourceCont zIndex">
-        <div class="sourceCont_header">
-            <p>SOURCE VIEW</p>
-            <img src="../assets/music_img/MusicListCloseBtn.png" alt="">
-        </div>
-        <iframe class="sourceOpen" src="https://github.com/kimsangjunv1/coding/blob/main/javascript/effect/gameEffect01.html" frameborder="0"></iframe>
-    </div> -->
     <style>
         .icon_test{
             font-size: 60px;
@@ -130,6 +125,7 @@
         }
     </style>
 
+    <!-- 아이콘 -->
     <main id="main">
         <div class="icon_box">
             <div class="icon1">
@@ -179,6 +175,15 @@
                     </div>
                 </div>
             </div>
+            <!-- <div class="icon6">
+                <div class="cont">
+                    <img src="../../assets/img/iconGame06.png" alt="유지">
+                    <div class="cont_desc">
+                        <span>맞는 그림 찾기2</span>
+                        <span>18,984 byte</span>
+                    </div>
+                </div>
+            </div> -->
         </div>
     </main>
     <!-- main -->
@@ -246,8 +251,23 @@
                 </div>
             </div>
         </div>
-        <!-- //뮤직 플레이어 -->
 
+        <style>
+            .display_inner{
+                position: relative;
+                height: 150px;
+            }
+            .display_desc{
+                position: absolute;
+                top: 0px;
+                left: 0px;
+            }
+            .display_game{
+                background-image: url(../../assets/img/match_game_bg.jpg);
+                height: 100%;
+            }
+            
+        </style>
         <!-- 기억하기 게임  -->
         <div class="sourceContMemory zIndex">
             <div class="sourceContMemory_header">
@@ -255,6 +275,15 @@
                 <img src="../assets/music_img/MusicListCloseBtn.png" alt="">
             </div>
             <div class="memory__wrap">
+                <!-- <div class="display_inner">
+                    <div class="display_desc">
+                        <p>0점</p>
+                        <p>STAGE</p>
+                    </div>
+                    <div class="display_game">
+                        <div class="character">a</div>
+                    </div>
+                </div> -->
                 <div class="memory__inner">
                     <div class="memory_begin">
                         <p>게임방법 ⍢</p>
@@ -414,6 +443,58 @@
                 </div>
             </div>
         </div>
+
+        <style>
+            .tetris__cont{
+                /* display: none; */
+    width: 491px;
+    height: 50vh;
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    z-index: 11;
+            }
+            .tetris__header{
+                background: #1f2645;
+    width: 100%;
+    height: 40px;
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+    display: flex;
+    justify-content: space-between;
+    padding: 24px;
+    align-items: center;
+    color: #fff;
+            }
+        </style>
+        <!-- 테트리스 -->
+        <div class="tetris__cont">
+            <div class="tetris__header">
+                <!-- <img src="../assets/music_img/logo_sound.png" alt=""> -->
+                <h2>Tetris</h2>
+                <div>x</div>
+            </div>
+            <div class="tetris__wrap">
+                <div class="tetris__inner">
+                    <div class="game__display">
+                        <div class="points">1점</div>
+                        <img src="../../assets/img/bdance.gif" alt="">
+                    </div>
+                    <div class="game__text" style="display:none">
+                        <span>GAME OVER</span>
+                        <!-- <div class="memory_restart" style="border:1px solid #fff; cursor:pointer;">재시작</div> -->
+                        <div class="tetris__restart">재시작</div>
+                    </div>
+                    <div class="tetris__start"></div>
+                    <!-- <div class="tetris__restart"></div> -->
+                    <div class="tetris__play">
+                        <div class="playground">
+                            <ul></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <style>
@@ -501,6 +582,8 @@
 
     <!-- 게임 스크립트 모음 -->
     <script src="../assets/js/memory.js"></script>
+    <!-- <script src="../assets/js/memory2.js"></script> -->
+    <script src="../assets/js/tetris.js"></script>
     <script src="../assets/js/music.js"></script>
     <script src="../assets/js/match.js"></script>
 
@@ -531,6 +614,11 @@
                 $(".mouse__cursor img").attr("src", "../../assets/img/mouseCursor05.png")
             },
         });
+        $(".icon6").draggable({
+            drag: function () {
+                $(".mouse__cursor img").attr("src", "../../assets/img/mouseCursor05.png")
+            },
+        });
         
         // 각 게임 창들 z-index 추가해주기
         $( ".music__inner" ).draggable({
@@ -549,6 +637,11 @@
             }
         });
         $( ".sourceContMemory" ).draggable({
+            start: function ( e, ui ) {
+                $( ".ui-draggable" ).not( ui.helper.css( "z-index", "11" ) ).css( "z-index", "10" );
+            }
+        });
+        $( ".tetris__cont" ).draggable({
             start: function ( e, ui ) {
                 $( ".ui-draggable" ).not( ui.helper.css( "z-index", "11" ) ).css( "z-index", "10" );
             }

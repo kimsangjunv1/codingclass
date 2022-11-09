@@ -1,0 +1,170 @@
+.tetris__wrap {
+}
+.tetris__inner {
+    background: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    left: 0;
+    width: 100%;
+    backdrop-filter: blur(10px);
+}
+.tetris__start {
+}
+.tetris__restart {
+}
+.tetris__play {
+}
+.playground {
+}
+.playground > ul {
+    /* border: 1px solid #fff; */
+}
+.playground > ul > li {
+    list-style: none;
+}
+.playground > ul > li > ul {
+    display: flex;
+}
+.playground > ul > li > ul > li {
+    list-style: none;
+    width: 41px;
+    height: 41px;
+    border: 1px solid #ffffff14;
+}
+
+.game__display{
+    height: 200px;
+    width: 100%;
+    position: relative;
+}
+.game__display::before,
+.game__display::after{
+    position: absolute;
+    content: '';
+}
+.game__display::after{
+    left: 0px;
+    width: 100%;
+    background: linear-gradient(90deg, #1e2645 50%, transparent 100%);
+    height: 100%;
+}
+.game__display img{
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
+    float: right;
+}
+
+.game__text{
+    display: none;
+    z-index: 100000;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgb(30 38 69 / 78%);
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(10px);
+    color: rgb(255, 255, 255);
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 20px solid #ffffff0a;
+}
+.game__text span{
+    font-weight: bold;
+    font-size: 32px;
+    text-shadow: 0px 5px rgba(255, 255, 255, 0.481);
+}
+.points{
+    font-weight: bold;
+    color: #fff;
+    font-size: 42px;
+    position: absolute;
+    left: 50px;
+    top: 50%;
+    transform: translate(0, -50%);
+    z-index: 1;
+}
+.tetris__header h2{
+    font-size: 16px;
+    
+}
+.tetris__restart{
+    background: #ffffff;
+    color: #000;
+    border: 0;
+    font-size: 16px;
+    padding: 10px;
+    margin-top: 10px;
+    font-weight: bold;
+    box-shadow: 0px 8px #ffffffa1;
+    transform: translateY(26px);
+    transition: transform 0.25s, box-shadow 0.15s;
+    cursor: pointer;
+}
+.tetris__restart:hover{
+    box-shadow: 0px 0px #ffffffa1, 0px 0px 60px 5px #ffffffa1;
+    transform: translateY(39px);
+    transition: transform 0.25s, box-shadow 0.35s;
+}
+.tetris__restart:not(:hover){
+    transition: transform 0.25s, box-shadow 0.1s;
+}
+
+.Tmino{
+    border: 1px solid #ecddff81 !important;
+    background-color: #55ff8c;
+    box-shadow: 0px 0px 40px 0px #6d42a2;
+}
+.Imino{
+    border: 1px solid #beeeff6d !important;
+    background-color: #1aa9de;
+    box-shadow: 0px 0px 40px 0px #1aaade;
+}
+.Omino{
+    border: 1px solid #fff5d070 !important;
+    background-color: #ffe789;
+    box-shadow: 0px 0px 40px 0px #fecb00;
+}
+
+.Zmino{
+
+    border: 1px solid #ffd1e05e !important;
+    background-color: #ed296a;
+    box-shadow: 0px 0px 40px #ed296a;
+}
+
+.Smino{
+    border: 1px solid #dfffc673 !important;
+    background-color: #78c53e;
+    box-shadow: 0px 0px 40px #78c53e;
+}
+
+.Smino{
+    border: 1px solid #ccdeff7c !important;
+    background-color: #3e6dc5;
+    box-shadow: 0px 0px 40px #3e6dc5;
+}
+
+.Jmino{
+    border: 1px solid #ffead373 !important;
+    background-color: #f09935;
+    box-shadow: 0px 0px 40px #f09935;
+}
+.Lmino{                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
+    border: 1px solid #fcffc8ba !important;
+    background-color: #e7f035;
+    box-shadow: 0px 0px 40px #e7f035;
+}
+
+.playground ul li ul li::before,
+.playground ul li ul li::after{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 10px;
+    height: 10px;
+    background: #fff;
+}
