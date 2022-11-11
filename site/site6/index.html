@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    *,
+    *::before,
+    *::after{
+        box-sizing: border-box;
+    }
+    .container {
+        width: 1000px;
+        padding: 0 20px;
+        margin: 0 auto;
+    }
+    .slider{
+        overflow: hidden;
+        width: 100%;
+        height: 233px;
+    }
+    .slider__inner{
+        /* overflow: hidden; */
+        display: flex;
+        flex-direction: column;
+        transition: 0.25s;
+    }
+    .slider__inner img{
+        width: 100%;
+    }
+
+    header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        /* padding: 30px 0px; */
+        height: 100px;
+    }
+    header img{
+        width: 150px;
+        margin: 0 40px;
+    }
+    .menu__cont{
+        display: flex;
+    }
+    .menu__cont div{
+        padding: 20px 40px;
+        position: relative;
+    }
+    .menu__cont div a{
+        text-decoration: none;
+        color: #000;
+    }
+    .menu__cont div:hover{
+        background: rgb(199, 101, 101);
+    }
+    .menu__cont div:hover a{
+        
+        color: #fff !important;
+    }
+    .menu__cont div ul{
+        position: absolute;
+        top: 50px;
+        left: 0;
+        /* height: 100px; */
+        overflow: hidden;
+        background: #fff;
+        width: 100%;
+        text-align: center;
+        z-index: 1000;
+    }
+    .menu__cont div ul li{
+        padding: 15px 10px;
+    }
+    .menu__cont div ul li:hover{
+        background: rgba(199, 101, 101, 0.507);
+    }
+    .tab__menu__cont{
+        display: flex;
+    }
+    .tab__menu__cont .tab__001,
+    .tab__menu__cont .tab__002{
+        font-size: 20px;
+        padding: 10px;
+    }
+    .tab__menu__cont .tab__001{
+        /* background: #fdf5f5;
+        font-weight: bold; */
+    }
+    .banner__cont__001 img,
+    .banner__cont__002 img{
+        width: 100%;
+    }
+    .banner__cont__001,
+    .banner__cont__002,
+    .notice__cont{
+        width: 33.5%;
+    }
+    .notice__cont ul{
+        display: flex;
+        justify-content: space-between;
+        background: #fdf5f5;
+        padding: 5px;
+        transition: 0.25s;
+    }
+    .notice__cont ul li{
+        list-style: none;
+        transition: 0.25s;
+    }
+    .banner__cont__001,
+    .banner__cont__002{
+        position: relative;
+    }
+    .banner__cont__001 p,
+    .banner__cont__002 p{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .center_cont{
+        display: flex;
+    }
+    
+    footer{
+        background: #eeeeee;
+        display: flex;
+        justify-content: space-between;
+        padding: 40px 0;
+    }
+    footer img{
+        height: 25px;
+        padding-left: 20px;
+    }
+    .sns_cont img{
+        padding: 0 20px;
+    }
+
+
+    .gallery_desc{
+        display: none;
+    }
+
+    .on{
+        background: #fdf5f5;
+        font-weight: bold;
+    }
+    .popup{
+        display: none;
+        border: 1px solid #000;
+        background: #fff;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 500px;
+        /* height: 200px; */
+        transform: translate(-50%,-50%);
+        padding: 20px;
+        text-align: center;
+    }
+    .popup h2{
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+    .close{
+        float: right;
+        border: 1px solid #000;
+        border-radius: 5px;
+        padding: 5px;
+        background: #eee;
+    }
+    /* .popup p{
+        margin
+    } */
+</style>
+<body>
+    <div class="container">
+        <header>
+            <img src="./assets/Untitled-1.jpg" alt="">
+            <div class="menu__cont">
+                <div class="menu__001">
+                    <a href="#">탑</a>
+                    <ul>
+                        <li>블라우스</li>
+                        <li>티</li>
+                        <li>셔츠</li>
+                        <li>니트</li>
+                    </ul>
+                </div>
+                <div class="menu__002">
+                    <a href="#">아우터</a>
+                    <ul>
+                        <li>블라우스</li>
+                        <li>티</li>
+                        <li>셔츠</li>
+                        <li>니트</li>
+                    </ul>
+                </div>
+                <div class="menu__003">
+                    <a href="#">팬츠</a>
+                    <ul>
+                        <li>블라우스</li>
+                        <li>티</li>
+                        <li>셔츠</li>
+                        <li>니트</li>
+                    </ul>
+                </div>
+                <div class="menu__004">
+                    <a href="#">악세서리</a>
+                    <ul>
+                        <li>블라우스</li>
+                        <li>티</li>
+                        <li>셔츠</li>
+                        <li>니트</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- <div></div> -->
+        </header>
+        <main>
+            <div class="slider">
+                <div class="slider__inner">
+                    <img class="item__001" src="../site6/assets/slider.jpg" alt="">
+                    <img class="item__001" src="../site6/assets/slider.jpg" alt="">
+                    <img class="item__001" src="../site6/assets/slider.jpg" alt="">
+                    <!-- <img class="item__002" src="../site5/assets/img/slider_bg02.jpg" alt=""> -->
+                    <!-- <img class="item__003" src="../site5/assets/img/slider_bg03.jpg" alt=""> -->
+                </div>
+            </div>
+            <div class="center_cont">
+                <div class="notice__cont">
+                    <div class="tab__menu__cont">
+                        <div class="tab__001 on">공지사항</div>
+                        <div class="tab__002">갤러리</div>
+                    </div>
+                    <div class="notice_desc">
+                        <ul>
+                            <li>공지사항내용</li>
+                            <li>날짜</li>
+                        </ul>
+                        <ul>
+                            <li>공지사항내용</li>
+                            <li>날짜</li>
+                        </ul>
+                        <ul>
+                            <li>공지사항내용</li>
+                            <li>날짜</li>
+                        </ul>
+                        <ul>
+                            <li>공지사항내용</li>
+                            <li>날짜</li>
+                        </ul>
+                    </div>
+                    <div class="gallery_desc">
+                        <ul>
+                            <li>공지사항내용</li>
+                            <li>날짜</li>
+                        </ul>
+                        <ul>
+                            <li>공지사항내용</li>
+                            <li>날짜</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="banner__cont__001">
+                    <img src="./assets/banner_01.jpg" alt="">
+                    <p>배너</p>
+                </div>
+                <div class="banner__cont__002">
+                    <img src="./assets/banner_01.jpg" alt="">
+                    <p>바로가기</p>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <img src="./assets/footer_logo.jpg" alt="">
+            <p>Copyright All rights reserved JUST 쇼핑몰</p>
+            <div class="sns_cont">
+                <img class="facebook" src="./assets/facebook.jpg" alt="">
+                <img class="instagram" src="./assets/instagram.jpg" alt="">
+                <img class="twitter" src="./assets/twitter.jpg" alt="">
+            </div>
+        </footer>
+    </div>
+    <div class="popup">
+        <h2>쇼핑몰 팝업 제목</h2>
+        <p>여기에 팝업 내용을 작성합니다.</p>
+        <div class="close">X 닫기</div>
+    </div>
+</body>
+<script>
+    const slider_inner = document.querySelector(".slider__inner")
+    const slider_inner_img = document.querySelectorAll(".slider__inner img")
+    const slider_inner_img_last = document.querySelector(".slider__inner img:last-child")
+    const menu_div = document.querySelectorAll(".menu__cont div")
+    const menu_div_ul = document.querySelectorAll(".menu__cont div ul")
+    let i = 0;
+    let q = 0;
+
+    setInterval(()=>{
+        i += 233;
+        if(i>=(233*3)){
+            i=0;
+            slider_inner.style.transition="0";
+            slider_inner.appendChild.(slider_inner_img_last)
+            // slider_inner.cloneNode();
+            slider_inner.cloneNode.appendChild(slider_inner_img_last)
+        } else {
+            slider_inner.style.transition="0.25s";
+        };
+        console.log(i)
+        slider_inner.style.transform="translatey(-"+i+"px)";
+        // slider_inner.appendChild(slider_inner_img_last);
+    },2000)
+
+    // setInterval(()=>{
+    //     i += 233;
+    //     if(i>=(233*3)) i=0;
+    //     console.log(i)
+    //     slider_inner.style.transform="translatey(-"+i+"px)";
+    //     // slider_inner.appendChild(slider_inner_img_last);
+    // },2000)
+
+    // menu_div.forEach((e,i)=>{
+    //     e.addEventListener("mouseenter", ()=>{
+    //         menu_div_ul.forEach((e,i)=>{
+    //             setInterval(() => {
+    //                 q += 1;
+    //                 // console.log(q)
+    //                 // e.style.height=q+"px"
+    //             }, 100);
+    //         })
+    //     })
+    // })
+    // menu_div.forEach((e,i)=>{
+    //     e.addEventListener("mouseleave", ()=>{
+    //         menu_div_ul.forEach((e,i)=>{
+    //             setTimeout(() => {
+    //                 q -= 1;
+    //                 e.style.height=q+"px"
+    //             }, 100);
+    //         })
+    //     })
+    // })
+    // const notice_alldiv = document.querySelector(".notice__cont div")
+    document.querySelector(".tab__001").addEventListener('click',()=>{
+        document.querySelector(".notice_desc").style.display="block"
+        document.querySelector(".gallery_desc").style.display="none"
+        document.querySelector(".tab__001").classList.add("on")
+        document.querySelector(".tab__002").classList.remove("on")
+    })
+    document.querySelector(".tab__002").addEventListener('click',()=>{
+        document.querySelector(".notice_desc").style.display="none"
+        document.querySelector(".gallery_desc").style.display="block"
+        document.querySelector(".tab__001").classList.remove("on")
+        document.querySelector(".tab__002").classList.add("on")
+    })
+
+    document.querySelectorAll(".notice__cont ul li").forEach((e,i)=>{
+        e.addEventListener("click",()=>{
+        document.querySelector(".popup").style.display="block"
+        
+    })  
+    })
+    document.querySelector(".close").addEventListener("click",()=>{
+        document.querySelector(".popup").style.display="none"
+    })
+</script>
+<script src="./assets/jquery-3.6.0.js"></script>
+<script>
+    $(function(){
+        
+        //header menu--------------------------------------------------------
+        $('.menu__cont div').mouseenter(function(){
+            $('.menu__cont div >ul').slideDown(800)
+        })
+
+        $('.menu__cont div').mouseleave(function(){
+            $('.menu__cont div >ul').stop().slideUp(500)
+        })
+        
+        //tab-----------------------------------------------------------------
+        // $('.tabMenu li').click(function(){
+        // var idx=$(this).index()
+        
+        // $('.tabItem >*').hide().removeClass('on')
+        // $('.tabItem >*').eq(idx).show().addClass('on')
+        
+        // $('.tabMenu li').removeClass('on')
+        // $(this).addClass('on')
+    
+    })
+    
+</script>
+</html>

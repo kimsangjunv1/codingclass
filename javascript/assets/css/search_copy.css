@@ -682,6 +682,9 @@ li {
   align-items: center;
   color: #fff;
 }
+.sourceContWord_header p{
+  font-weight: bold;
+}
 .sourceContWord_header img{
   filter: invert(1);
   transform: scale(0.7);

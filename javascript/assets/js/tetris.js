@@ -2,9 +2,13 @@ const tetrisWrap = document.querySelector(".tetris__wrap");
 const playground = tetrisWrap.querySelector(".playground > ul");
 const gameText = tetrisWrap.querySelector(".game__text")
 
+const searchAudioZelda = document.querySelector("#tetris_audio1");
+const searchAudioTetris = document.querySelector("#tetris_audio2");
+const searchAudioCorrects = document.querySelector("#tetris_success");
+
 // variables
-let rows = 17;
-let cols = 12;
+let rows = 20;
+let cols = 16;
 let points = 0;
 let duration = 500;
 let downInterval;
@@ -122,6 +126,7 @@ function renderBlocks(moveType = ""){
 
             if(moveType === 'retry'){               //만약 movetype값이 retry라면 초를 초기화하고 showGameOverText 실행
                 clearInterval(downInterval)
+                document.querySelector(".final_point em").innerText = points;
                 showGameoverText()
             } else {
                 setTimeout(()=>{
@@ -163,7 +168,8 @@ function seizeBlock(){
 // 게임오버
 function showGameoverText() {
     gameText.style.display = "flex"
-    // alert("ddd")
+    searchAudioTetris.pause();
+    searchAudioZelda.pause();
 }
 
 //한줄 제거하기
@@ -181,7 +187,8 @@ function checkMatch(){
             child.remove();
             prependNewLine();
             points++;
-            document.querySelector('.points').innerText = points
+            searchAudioCorrects.play();
+            document.querySelector('.points em').innerText = points
             // console.log(points)
         }
     })
@@ -263,9 +270,85 @@ document.addEventListener("keydown", e=>{
             break;
     }
 })
-document.querySelector(".tetris__restart").addEventListener("click", ()=>{
+
+function reset(){
     playground.innerHTML = "";
     gameText.style.display = "none"
+    points=0;
+    document.querySelector('.points em').innerText = points;
     init();
+}
+
+//노래선택
+document.querySelector('.zelda').addEventListener("click",()=>{
+    // alert("ddd")
+    searchAudioZelda.play();
+    searchAudioTetris.pause();
 })
-init();
+document.querySelector('.tetris').addEventListener("click",()=>{
+    searchAudioTetris.play();
+    searchAudioZelda.pause();
+    // alert("ddd")
+})
+
+//노래선택
+document.querySelector('.zelda_over').addEventListener("click",()=>{
+    // alert("ddd")
+    searchAudioZelda.play();
+    searchAudioTetris.pause();
+})
+document.querySelector('.tetris_over').addEventListener("click",()=>{
+    searchAudioTetris.play();
+    searchAudioZelda.pause();
+    // alert("ddd")
+})
+
+document.querySelector(".tetris__restart").addEventListener("click", ()=>{
+    reset();
+})
+
+// init();
+
+
+document.querySelector(".icon6").addEventListener("click", ()=>{
+    document.querySelector(".tetris__cont").style.display="block";
+    // reset()
+})
+
+document.querySelector(".tetris__header img").addEventListener("click", ()=>{
+    document.querySelector(".tetris__cont").style.display="none";
+    document.querySelector(".game__intro").style.display="block";
+    searchAudioTetris.pause();
+    searchAudioZelda.pause();
+})
+
+document.querySelector(".tetris__start").addEventListener("click", ()=>{
+    document.querySelector(".game__intro").style.display="none";
+    reset()
+})
+
+
+// const audioIcon = document.querySelector(".music__header img")
+// const audios = document.getElementById('tetris_audio1');
+// const audioVolumes = document.getElementById('volume-controls');
+
+// //뮤직 볼륨 버튼 클릭시
+// let i=0;
+// audioIcon.addEventListener("click",()=>{
+// if(i==0){
+//     // document.querySelector(".volumeCont").style.display="block";
+//     document.querySelector(".volumeCont").style.transform="translate(-50%, 0)";
+//     audioIcon.style.transform="translatex(88px)";
+//     i++;
+// } else{
+//     // document.querySelector(".volumeCont").style.display="none";
+//     document.querySelector(".volumeCont").style.transform="translate(-50%, -100px)";
+//     audioIcon.style.transform="translatex(0)";
+//     i--;
+// }
+// })
+
+// audioVolumes.addEventListener("change", function(e) {
+//     audios.volume = this.value/10;
+// })
+

@@ -175,15 +175,15 @@
                     </div>
                 </div>
             </div>
-            <!-- <div class="icon6">
+            <div class="icon6">
                 <div class="cont">
                     <img src="../../assets/img/iconGame06.png" alt="유지">
                     <div class="cont_desc">
-                        <span>맞는 그림 찾기2</span>
-                        <span>18,984 byte</span>
+                        <span>테트리스</span>
+                        <span>5,984 byte</span>
                     </div>
                 </div>
-            </div> -->
+            </div>
         </div>
     </main>
     <!-- main -->
@@ -447,24 +447,24 @@
         <style>
             .tetris__cont{
                 /* display: none; */
-    width: 491px;
-    height: 50vh;
-    position: absolute;
-    top: 25%;
-    left: 25%;
-    z-index: 11;
+                width: 491px;
+                height: 50vh;
+                position: absolute;
+                top: 25%;
+                left: 25%;
+                z-index: 11;
             }
             .tetris__header{
                 background: #1f2645;
-    width: 100%;
-    height: 40px;
-    backdrop-filter: blur(7px);
-    -webkit-backdrop-filter: blur(7px);
-    display: flex;
-    justify-content: space-between;
-    padding: 24px;
-    align-items: center;
-    color: #fff;
+                width: 100%;
+                height: 40px;
+                backdrop-filter: blur(7px);
+                -webkit-backdrop-filter: blur(7px);
+                display: flex;
+                justify-content: space-between;
+                padding: 24px;
+                align-items: center;
+                color: #fff;
             }
         </style>
         <!-- 테트리스 -->
@@ -472,20 +472,57 @@
             <div class="tetris__header">
                 <!-- <img src="../assets/music_img/logo_sound.png" alt=""> -->
                 <h2>Tetris</h2>
-                <div>x</div>
+                <img src="../assets/music_img/MusicListCloseBtn.png" alt="">
             </div>
             <div class="tetris__wrap">
                 <div class="tetris__inner">
                     <div class="game__display">
-                        <div class="points">1점</div>
+                        <!-- <div class="volumeCont">
+                            <input type="range" id="volume-controls" min="0" max="10" value="5" step="0.1">							
+                        </div>  -->
+                        <div class="points"><em style="font-style:normal">0</em>점</div>
+                        <!-- <p>YOU 캔 두잇!</p> -->
                         <img src="../../assets/img/bdance.gif" alt="">
+                    </div>
+                    <style>
+                        .tetris_over,
+                        .zelda_over,
+                        .tetris,
+                        .zelda{
+                            cursor: pointer;
+                        }
+                        .zelda_over,
+                        .zelda{
+                            margin: 0 10px;
+                            border-right: 1px solid #fff;
+                            padding-right: 10px;
+                        }
+                    </style>
+                    <div class="game__intro"  style="display:flex">
+                        <audio id="tetris_audio1" src="/assets/music/zelda.mp3" loop="loop"></audio>
+                        <audio id="tetris_audio2" src="/assets/music/tetris.mp3" loop="loop"></audio>
+                        <audio id="tetris_success" src="../../assets/music/success.m4a"></audio>
+                        <audio id="tetris_fail" src="../../assets/music/fail.m4a"></audio>
+                        <div style="display: flex; flex-direction: column; align-items: start;"">
+                            <span>TETRIS</span>
+                            <p style="margin:10px 0">1. 한줄을 모두 채울시 1점을 획득합니다.</p>
+                            <div style="display:flex">
+                                <p>BGM을 선택해주세요</p> <p class="zelda">zelda</p> <p class="tetris">tetris</p>
+                            </div>
+                        </div>
+                        <!-- <div class="memory_restart" style="border:1px solid #fff; cursor:pointer;">재시작</div> -->
+                        <div class="tetris__start">게임시작</div>
                     </div>
                     <div class="game__text" style="display:none">
                         <span>GAME OVER</span>
+                        <p class="final_point"><em></em>점</p>
+                        <div style="display:flex; margin-top: 10px;">
+                            <p>다시 듣고싶은 BGM을 선택해주세요</p> <p class="zelda_over">zelda</p> <p class="tetris_over">tetris</p>
+                        </div>
                         <!-- <div class="memory_restart" style="border:1px solid #fff; cursor:pointer;">재시작</div> -->
                         <div class="tetris__restart">재시작</div>
                     </div>
-                    <div class="tetris__start"></div>
+                    <!-- <div class="tetris__start"></div> -->
                     <!-- <div class="tetris__restart"></div> -->
                     <div class="tetris__play">
                         <div class="playground">
@@ -573,6 +610,8 @@
       </div>
       
 
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/53148/requestAnimationFrame.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
 
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>

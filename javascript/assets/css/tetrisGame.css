@@ -7,6 +7,9 @@
     width: 100%;
     backdrop-filter: blur(10px);
 }
+.tetris__cont{
+    display: none;
+}
 .tetris__start {
 }
 .tetris__restart {
@@ -26,13 +29,13 @@
 }
 .playground > ul > li > ul > li {
     list-style: none;
-    width: 41px;
-    height: 41px;
+    width: 31px;
+    height: 31px;
     border: 1px solid #ffffff14;
 }
 
 .game__display{
-    height: 200px;
+    height: 165px;
     width: 100%;
     position: relative;
 }
@@ -44,7 +47,7 @@
 .game__display::after{
     left: 0px;
     width: 100%;
-    background: linear-gradient(90deg, #1e2645 50%, transparent 100%);
+    background: linear-gradient(90deg, rgb(77 225 144) 50%, transparent 100%);
     height: 100%;
 }
 .game__display img{
@@ -52,6 +55,30 @@
     height: 100%;
     object-fit: cover;
     float: right;
+}
+
+.game__intro{
+    display: flex;
+    z-index: 100000;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgb(30, 38, 69);
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(10px);
+    color: rgb(255, 255, 255);
+    text-align: center;
+    /* flex-direction: column; */
+    align-items: center;
+    justify-content: space-between;
+    border: 20px solid #ffffff0a;
+}
+.game__intro span{
+    font-weight: bold;
+    font-size: 32px;
+    text-shadow: 0px 5px rgba(255, 255, 255, 0.481);
 }
 
 .game__text{
@@ -91,6 +118,20 @@
     font-size: 16px;
     
 }
+.tetris__start{
+    background: #ffffff;
+    color: #000;
+    border: 0;
+    font-size: 16px;
+    padding: 10px;
+    margin-top: 10px;
+    font-weight: bold;
+    box-shadow: 0px 8px #ffffffa1;
+    transform: translateY(-6px);
+    transition: transform 0.25s, box-shadow 0.15s;
+    cursor: pointer;
+}
+
 .tetris__restart{
     background: #ffffff;
     color: #000;
@@ -111,6 +152,12 @@
 }
 .tetris__restart:not(:hover){
     transition: transform 0.25s, box-shadow 0.1s;
+}
+
+.tetris__header img{
+    filter: invert(1);
+    transform: scale(0.7);
+    width: 22px;
 }
 
 .Tmino{
@@ -167,4 +214,42 @@
     width: 10px;
     height: 10px;
     background: #fff;
+}
+
+
+.volumeCont{
+    position: absolute;
+    background: #0000008f;
+    padding: 7px 14px;
+    z-index: 1000;
+    backdrop-filter: blur(19px);
+    top: 23px;
+    left: 50%;
+    transform: translate(-50%, -100px);
+    border: 1px solid #ffffff2b;
+    /* display: none; */
+    transition: transform 0.25s;
+}
+.volumeCont::after{content: '0'; left: 10px;}
+.volumeCont::before{content: '100'; right: 10px;}
+.volumeCont::before,
+.volumeCont::after{
+    /* font-family: 'gothic'; */
+    /* text-align: center; */
+    /* width: 100%; */
+    font-size: 12px;
+    color: rgb(255, 255, 255);
+    font-weight: lighter;
+    position: absolute;
+    top: 40px;
+    
+}
+.final_point{
+    font-weight: bold;
+    font-size: 32px;
+    text-shadow: 0px 5px rgba(255, 255, 255, 0.481);
+    margin: 20px 0;
+}
+.final_point em{
+    font-style: normal;
 }
