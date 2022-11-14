@@ -5,6 +5,8 @@ const gameText = tetrisWrap.querySelector(".game__text")
 const searchAudioZelda = document.querySelector("#tetris_audio1");
 const searchAudioTetris = document.querySelector("#tetris_audio2");
 const searchAudioCorrects = document.querySelector("#tetris_success");
+const searchAudioOver = document.querySelector("#tetris_gameOver");
+const searchAudioSpeedUp = document.querySelector("#tetris_speedUp");
 
 // variables
 let rows = 20;
@@ -172,6 +174,7 @@ function seizeBlock(){
 function showGameoverText() {
     //시간 정지
     clearInterval(timeInterval)
+    searchAudioOver.play();
     searchLv.innerText="・EASY"
     gameText.style.display = "flex"
     searchTimes.innerText = "0:00"
@@ -381,10 +384,12 @@ function reduceTime(){
     if(timeReamining == 30){
         duration = 200;
         searchLv.innerText="・NORMAL"
+        searchAudioSpeedUp.play()
         document.querySelector(".game__display").style.filter="hue-rotate(107deg)";
     }
     if(timeReamining == 60){
         searchLv.innerText="・HARD"
+        searchAudioSpeedUp.play()
         duration = 100;
         document.querySelector(".game__display").style.filter="hue-rotate(207deg)";
     }
