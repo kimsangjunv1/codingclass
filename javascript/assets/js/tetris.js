@@ -174,6 +174,7 @@ function showGameoverText() {
     clearInterval(timeInterval)
     searchLv.innerText="・EASY"
     gameText.style.display = "flex"
+    searchTimes.innerText = "0:00"
     document.querySelector(".game__display").style.filter="hue-rotate(0deg)";
     duration = 500;
     timeReamining=0;
