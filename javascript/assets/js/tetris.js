@@ -12,9 +12,10 @@ const searchAudioSpeedUp = document.querySelector("#tetris_speedUp");
 let rows = 20;
 let cols = 16;
 let points = 0;
-let duration = 500;
+let durations = 500;
 let downInterval;
 let tempMovingItem;
+let level = 1;
 
 
 // 블록 정보
@@ -24,6 +25,18 @@ const movingItem = {
     top: 0,
     left: 0
 }
+
+// 시간설정
+const searchTimes = document.querySelector(".real_time");
+
+// 난이도 표시
+const searchLv = document.querySelector(".real_time em");
+
+let timeRemaining = 0,  // 남은 시간
+    timeIntervals = "",   // 시간 간격
+    timing = 0;
+
+    // 시간 설정(1초에 한번씩 줄어듦)
 
 
 // 블록 좌표값
@@ -75,16 +88,63 @@ const blocks = {
 
 // 시작하기
 function init(){
-    tempMovingItem = { ...movingItem };
+    
+    playground.innerHTML = "";
+    
+    gameText.style.display = "none"
+    
+    points=0;
+    
+    document.querySelector('.points em').innerText = points;
+    
     for( let i=0; i<rows; i++ ){
         prependNewLine();   //블록 라인 만들기
     }
-    // renderBlocks()      //블록 출력하기
+
     generateNewBlock()  //블록 만들기
 
-    timeInterval = setInterval(reduceTime, 1000);
-    // 시간 설정하기 0:00
+    timeIntervals = setInterval(()=>{
+        timing++
+        searchTimes.innerText = (60-timing);
+        if(timing==60){
+            
+            durations = 200;
+            searchAudioSpeedUp.play()
+            document.querySelector(".game__display").style.filter="hue-rotate(107deg)";
+        } else if(timing == 120){
+            level ++;
+            durations = 100;
+            searchAudioSpeedUp.play()
+            document.querySelector(".game__display").style.filter="hue-rotate(207deg)";
+        }
+    },1000);
+    
+    timeRemaining = 0
+
+    tempMovingItem = { ...movingItem };
 }
+
+function reduceTime(){
+    timeRemaining++;
+    searchTimes.innerText = displayTime();
+    if(timeRemaining == 30){
+        durations = 200;
+        searchLv.innerText="・NORMAL"
+        searchAudioSpeedUp.play()
+        document.querySelector(".game__display").style.filter="hue-rotate(107deg)";
+    }
+    if(timeRemaining == 60){
+        searchLv.innerText="・HARD"
+        searchAudioSpeedUp.play()
+        durations = 100;
+        document.querySelector(".game__display").style.filter="hue-rotate(207deg)";
+    }
+}
+
+document.querySelector(".tetris__start").addEventListener("click", ()=>{
+    document.querySelector(".game__intro").style.display="none";
+    init()
+})
 
 
 // 블록 만들기
@@ -173,14 +233,13 @@ function seizeBlock(){
 // 게임오버
 function showGameoverText() {
     //시간 정지
-    clearInterval(timeInterval)
+    clearInterval(timeIntervals)
     searchAudioOver.play();
-    searchLv.innerText="・EASY"
     gameText.style.display = "flex"
-    searchTimes.innerText = "0:00"
     document.querySelector(".game__display").style.filter="hue-rotate(0deg)";
-    duration = 500;
-    timeReamining=0;
+    searchTimes.innerText = 60;
+    timing=0;
+    durations = 500;
     searchAudioTetris.pause();
     searchAudioZelda.pause();
 }
@@ -214,7 +273,7 @@ function generateNewBlock(){
 
     downInterval = setInterval(()=>{
         moveBlock("top", 1)
-    },duration)
+    },durations)
 
     const blockArray = Object.entries(blocks);
     const randomIndex = Math.floor(Math.random()*blockArray.length);
@@ -284,13 +343,13 @@ document.addEventListener("keydown", e=>{
     }
 })
 
-function reset(){
-    playground.innerHTML = "";
-    gameText.style.display = "none"
-    points=0;
-    document.querySelector('.points em').innerText = points;
-    init();
-}
+// function reset(){
+//     playground.innerHTML = "";
+//     gameText.style.display = "none"
+//     points=0;
+//     document.querySelector('.points em').innerText = points;
+//     init();
+// }
 
 //노래선택
 document.querySelector('.zelda').addEventListener("click",()=>{
@@ -317,7 +376,7 @@ document.querySelector('.tetris_over').addEventListener("click",()=>{
 })
 
 document.querySelector(".tetris__restart").addEventListener("click", ()=>{
-    reset();
+    init();
 })
 
 // init();
@@ -336,73 +395,20 @@ document.querySelector(".tetris__header img").addEventListener("click", ()=>{
     searchAudioZelda.pause();
     document.querySelector(".game__display").style.filter="hue-rotate(0deg)";
     searchLv.innerText="・EASY"
-    duration = 500;
-    timeReamining=0;
-    clearInterval(timeInterval);
+    durations = 500;
+    timeRemaining=0;
+    clearInterval(timeIntervals);
 })
 
-document.querySelector(".tetris__start").addEventListener("click", ()=>{
-    document.querySelector(".game__intro").style.display="none";
-    reset()
-})
-
-
-// const audioIcon = document.querySelector(".music__header img")
-// const audios = document.getElementById('tetris_audio1');
-// const audioVolumes = document.getElementById('volume-controls');
-
-// //뮤직 볼륨 버튼 클릭시
-// let i=0;
-// audioIcon.addEventListener("click",()=>{
-// if(i==0){
-//     // document.querySelector(".volumeCont").style.display="block";
-//     document.querySelector(".volumeCont").style.transform="translate(-50%, 0)";
-//     audioIcon.style.transform="translatex(88px)";
-//     i++;
-// } else{
-//     // document.querySelector(".volumeCont").style.display="none";
-//     document.querySelector(".volumeCont").style.transform="translate(-50%, -100px)";
-//     audioIcon.style.transform="translatex(0)";
-//     i--;
-// }
-// })
-
-// audioVolumes.addEventListener("change", function(e) {
-//     audios.volume = this.value/10;
-// })
-
-const searchTimes = document.querySelector(".times");
-const searchLv = document.querySelector(".times em");
-
-let timeReamining = 0,  // 남은 시간
-    timeInterval = ""    // 시간 간격
-    // 시간 설정(1초에 한번씩 줄어듦)
-
-function reduceTime(){
-    timeReamining++;
-    searchTimes.innerText = displayTime();
-    if(timeReamining == 30){
-        duration = 200;
-        searchLv.innerText="・NORMAL"
-        searchAudioSpeedUp.play()
-        document.querySelector(".game__display").style.filter="hue-rotate(107deg)";
+// 시간 표시하기
+function displayTime(){
+    if(timeRemaining <= 0){
+        return "0:00";
+    } else {
+        let minutes = Math.floor(timeRemaining / 60);
+        let seconds = timeRemaining % 60;
+        // 초 단위가 한자리수일 때 0 추가
+        if(seconds < 10) seconds = "0" + seconds;
+        return minutes + ":" + seconds;
     }
-    if(timeReamining == 60){
-        searchLv.innerText="・HARD"
-        searchAudioSpeedUp.play()
-        duration = 100;
-        document.querySelector(".game__display").style.filter="hue-rotate(207deg)";
-    }
-    }
-    // 시간 표시하기
-    function displayTime(){
-        if(timeReamining <= 0){
-            return "0:00";
-        } else {
-            let minutes = Math.floor(timeReamining / 60);
-            let seconds = timeReamining % 60;
-            // 초 단위가 한자리수일 때 0 추가
-            if(seconds < 10) seconds = "0" + seconds;
-            return minutes + ":" + seconds;
-        }
-    }
+}
