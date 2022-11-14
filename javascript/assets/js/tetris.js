@@ -173,6 +173,7 @@ function showGameoverText() {
     //시간 정지
     clearInterval(timeInterval)
     gameText.style.display = "flex"
+    document.querySelector(".game__display").style.filter="hue-rotate(0deg)";
     duration = 500;
     timeReamining=0;
     searchAudioTetris.pause();
@@ -319,6 +320,7 @@ document.querySelector(".tetris__restart").addEventListener("click", ()=>{
 
 document.querySelector(".icon6").addEventListener("click", ()=>{
     document.querySelector(".tetris__cont").style.display="block";
+    gameText.style.display = "none"
     // reset()
 })
 
@@ -327,6 +329,7 @@ document.querySelector(".tetris__header img").addEventListener("click", ()=>{
     document.querySelector(".game__intro").style.display="block";
     searchAudioTetris.pause();
     searchAudioZelda.pause();
+    document.querySelector(".game__display").style.filter="hue-rotate(0deg)";
     duration = 500;
     timeReamining=0;
     clearInterval(timeInterval);
