@@ -172,6 +172,7 @@ function seizeBlock(){
 function showGameoverText() {
     //시간 정지
     clearInterval(timeInterval)
+    searchLv.innerText="・EASY"
     gameText.style.display = "flex"
     document.querySelector(".game__display").style.filter="hue-rotate(0deg)";
     duration = 500;
@@ -330,6 +331,7 @@ document.querySelector(".tetris__header img").addEventListener("click", ()=>{
     searchAudioTetris.pause();
     searchAudioZelda.pause();
     document.querySelector(".game__display").style.filter="hue-rotate(0deg)";
+    searchLv.innerText="・EASY"
     duration = 500;
     timeReamining=0;
     clearInterval(timeInterval);
@@ -366,6 +368,7 @@ document.querySelector(".tetris__start").addEventListener("click", ()=>{
 // })
 
 const searchTimes = document.querySelector(".times");
+const searchLv = document.querySelector(".times em");
 
 let timeReamining = 0,  // 남은 시간
     timeInterval = ""    // 시간 간격
@@ -376,9 +379,11 @@ function reduceTime(){
     searchTimes.innerText = displayTime();
     if(timeReamining == 30){
         duration = 200;
+        searchLv.innerText="・NORMAL"
         document.querySelector(".game__display").style.filter="hue-rotate(107deg)";
     }
     if(timeReamining == 60){
+        searchLv.innerText="・HARD"
         duration = 100;
         document.querySelector(".game__display").style.filter="hue-rotate(207deg)";
     }

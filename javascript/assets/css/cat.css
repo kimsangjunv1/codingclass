@@ -59,7 +59,7 @@
     right: -10px;
     top: -30px;
     transition: 0.5s;
-    z-index: 50;
+    z-index: 10;
   }
   .cat_head_deco{
     position: absolute;
