@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 이벤트 객체</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/dracula.css">
+</head>
+<body>
+    <div class="extend_menu extend_menu_opacity_hide">&gt;</div>
+    <header id="header">
+        <div style="background-color: #ededed; border-radius: 50px; width: 25px; position:absolute; right: 20px; cursor: pointer;"class="compact_menu">x</div>
+        <h1><a href="index.html">Javascript</a></h1>
+        <div style="margin:0 auto;
+                    background-color: #f2f2f7;
+                    width: 115px;
+                    text-align: center;
+                    padding: 10px;
+                    margin-bottom: 42px;
+                    cursor: pointer;
+                    border-radius: 5px;" class="light">불 끄기</div>
+
+        <div style="margin:0 auto;
+                    background-color: #000;
+                    width: 115px; 
+                    text-align: center;
+                    padding: 10px;
+                    margin-bottom: 42px;
+                    cursor: pointer;
+                    border-radius: 5px;" class="dark hide">불 켜기</div>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="javascript01.html">데이터 저장하기</a></li>
+                <li><a href="javascript02.html">데이터 불러오기</a></li>
+                <li><a href="javascript03.html">데이터 실행하기</a></li>
+                <li><a href="javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="javascript05.html">문자열 객체</a></li>
+                <li><a href="javascript06.html">배열 객체</a></li>
+                <li><a href="javascript07.html">수학 객체</a></li>
+                <li><a href="javascript08.html">숫자 객체</a></li>
+                <li><a href="javascript09.html">브라우저 객체</a></li>
+                <li><a href="javascript10.html">요소 객체</a></li>
+                <li><a href="javascript11.html">이벤트 객체</a></li>
+                <li class="active"><a href="javascript12.html">제이쿼리</a></li>
+            </ul>
+            <ul class="effect">
+                <li><a href="effect/searchEffect.html">검색 효과</a></li>
+                <li><a href="effect/quizEffect.html">퀴즈 효과</a></li>
+                <li><a href="effect/dataEffect.html">데이터 효과</a></li>
+                <li><a href="effect/mouseEffect.html">마우스 효과</a></li>
+                <li><a href="effect/sliderEffect.html">슬라이드 효과</a></li>
+                <li><a href="effect/parallaxEffect.html">패럴랙스 효과</a></li>
+                <li><a href="effect/gameEffect.html">게임 효과</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <!-- 티스토리 용 -->
+        <div id="sample01" class="container sample document">
+        <!-- 메인 샘플 시작 -->
+            <h2 class="t_tit">프로그래머스 1단계</h2>
+            <p class="t_desc">
+                다 뒤집어 볼게요~~~~~~~~~<br>
+                그렇게 눈을 떠보니 밤에서 아침이 되어 이걸 보고있는 당신
+            </p>
+
+            <hr>
+
+            <div class="question_01">
+                <h2 class="t_tit2">자연수 뒤집어 배열로 만들기</h2>
+                <p class="t_desc2">
+                    if를 통해 s의 길이 여부와 값이 Nan인지를 확인해 반환할 값을 결정하는 방법입니다.
+                <p class="t_box">
+                    1. 배열을 가진 answer를 생성 및 s는 n을 문자열로 변화시킨 값을 담아줍니다.<br>
+                    2. i는 s의 길이가 담겨있으며 i는 0초과일때까지 i를 1씩 뺍니다<br>
+                    3. answer에 s의 substr을 통해 i-1번째부터 1개를 parseInt를 통해 정수로 변환한뒤 push를 통해 삽입해줍니다<br>
+                    4. 최종적으로 answer를 반환합니다.
+                </p>
+            <div class="t_code">
+<pre><code class="language-js">function solution(n) {
+    var answer = [];
+    let s = n.toString() 
+
+    for(let i = s.length; i > 0; i--){
+        answer.push(parseInt(s.substr((i-1), 1)))
+    }
+
+    return answer;
+}
+</code></pre>
+                </div>
+            </div>
+            <div class="question_02">
+                <h2 class="t_tit2">자연수 뒤집어 배열로 만들기 : 다른 사람 풀이</h2>
+                <p class="t_desc2">
+                    if를 통한 각 조건에 충족한다면 반환할 값을 결정하는 방법입니다.
+                <p class="t_box">
+                    1. 배열을 가진 arr을 생성<br>
+                    2. do while을 통해 arr에 n나누기 10해서 나머지 값을 push 해준뒤<br>
+                    3. n에 n나누기 10해서 몫을 push해주고<br>
+                    4. 이 과정을 n이 0 초과일때까지 반복해줍니다.<br>
+                    5. arr최종 반환 
+                </p>
+            <div class="t_code">
+<pre><code class="language-js">function solution(n) {
+    // 숫자풀이
+    var arr = [];
+
+    do {
+        arr.push(n%10);
+        n = Math.floor(n/10);
+    } while (n>0);
+
+    return arr;
+}
+</code></pre>
+                </div>
+            </div>
+            
+        </div>
+        <!-- 티스토리 용 끝 -->
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:webstoryboy@naver.com">webstoryboy@naver.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../../assets/js/highlight.min.js"></script>
+    <script src="../../assets/js/menu_setting.js"></script><!-- 1. 스크립트 가져옴 (다음줄) -->
+    <script>
+        hljs.highlightAll();
+    </script>
+    <script>
+    </script>
+
+</body>
+</html>

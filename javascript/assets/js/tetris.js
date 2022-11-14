@@ -79,6 +79,9 @@ function init(){
     }
     // renderBlocks()      //블록 출력하기
     generateNewBlock()  //블록 만들기
+
+    timeInterval = setInterval(reduceTime, 1000);
+    // 시간 설정하기 0:00
 }
 
 
@@ -167,7 +170,11 @@ function seizeBlock(){
 
 // 게임오버
 function showGameoverText() {
+    //시간 정지
+    clearInterval(timeInterval)
     gameText.style.display = "flex"
+    duration = 500;
+    timeReamining=0;
     searchAudioTetris.pause();
     searchAudioZelda.pause();
 }
@@ -320,6 +327,9 @@ document.querySelector(".tetris__header img").addEventListener("click", ()=>{
     document.querySelector(".game__intro").style.display="block";
     searchAudioTetris.pause();
     searchAudioZelda.pause();
+    duration = 500;
+    timeReamining=0;
+    clearInterval(timeInterval);
 })
 
 document.querySelector(".tetris__start").addEventListener("click", ()=>{
@@ -352,3 +362,33 @@ document.querySelector(".tetris__start").addEventListener("click", ()=>{
 //     audios.volume = this.value/10;
 // })
 
+const searchTimes = document.querySelector(".times");
+
+let timeReamining = 0,  // 남은 시간
+    timeInterval = ""    // 시간 간격
+    // 시간 설정(1초에 한번씩 줄어듦)
+
+function reduceTime(){
+    timeReamining++;
+    searchTimes.innerText = displayTime();
+    if(timeReamining == 30){
+        duration = 200;
+        document.querySelector(".game__display").style.filter="hue-rotate(107deg)";
+    }
+    if(timeReamining == 60){
+        duration = 100;
+        document.querySelector(".game__display").style.filter="hue-rotate(207deg)";
+    }
+    }
+    // 시간 표시하기
+    function displayTime(){
+        if(timeReamining <= 0){
+            return "0:00";
+        } else {
+            let minutes = Math.floor(timeReamining / 60);
+            let seconds = timeReamining % 60;
+            // 초 단위가 한자리수일 때 0 추가
+            if(seconds < 10) seconds = "0" + seconds;
+            return minutes + ":" + seconds;
+        }
+    }

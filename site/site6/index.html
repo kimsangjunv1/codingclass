@@ -5,181 +5,181 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-</head>
-<style>
-    *{
-        margin: 0;
-        padding: 0;
-    }
-    *,
-    *::before,
-    *::after{
-        box-sizing: border-box;
-    }
-    .container {
-        width: 1000px;
-        padding: 0 20px;
-        margin: 0 auto;
-    }
-    .slider{
-        overflow: hidden;
-        width: 100%;
-        height: 233px;
-    }
-    .slider__inner{
-        /* overflow: hidden; */
-        display: flex;
-        flex-direction: column;
-        transition: 0.25s;
-    }
-    .slider__inner img{
-        width: 100%;
-    }
-
-    header{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        /* padding: 30px 0px; */
-        height: 100px;
-    }
-    header img{
-        width: 150px;
-        margin: 0 40px;
-    }
-    .menu__cont{
-        display: flex;
-    }
-    .menu__cont div{
-        padding: 20px 40px;
-        position: relative;
-    }
-    .menu__cont div a{
-        text-decoration: none;
-        color: #000;
-    }
-    .menu__cont div:hover{
-        background: rgb(199, 101, 101);
-    }
-    .menu__cont div:hover a{
-        
-        color: #fff !important;
-    }
-    .menu__cont div ul{
-        position: absolute;
-        top: 50px;
-        left: 0;
-        /* height: 100px; */
-        overflow: hidden;
-        background: #fff;
-        width: 100%;
-        text-align: center;
-        z-index: 1000;
-    }
-    .menu__cont div ul li{
-        padding: 15px 10px;
-    }
-    .menu__cont div ul li:hover{
-        background: rgba(199, 101, 101, 0.507);
-    }
-    .tab__menu__cont{
-        display: flex;
-    }
-    .tab__menu__cont .tab__001,
-    .tab__menu__cont .tab__002{
-        font-size: 20px;
-        padding: 10px;
-    }
-    .tab__menu__cont .tab__001{
-        /* background: #fdf5f5;
-        font-weight: bold; */
-    }
-    .banner__cont__001 img,
-    .banner__cont__002 img{
-        width: 100%;
-    }
-    .banner__cont__001,
-    .banner__cont__002,
-    .notice__cont{
-        width: 33.5%;
-    }
-    .notice__cont ul{
-        display: flex;
-        justify-content: space-between;
-        background: #fdf5f5;
-        padding: 5px;
-        transition: 0.25s;
-    }
-    .notice__cont ul li{
-        list-style: none;
-        transition: 0.25s;
-    }
-    .banner__cont__001,
-    .banner__cont__002{
-        position: relative;
-    }
-    .banner__cont__001 p,
-    .banner__cont__002 p{
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
-    .center_cont{
-        display: flex;
-    }
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        *,
+        *::before,
+        *::after{
+            box-sizing: border-box;
+        }
+        .container {
+            width: 1000px;
+            padding: 0 20px;
+            margin: 0 auto;
+        }
+        .slider{
+            overflow: hidden;
+            width: 100%;
+            height: 233px;
+        }
+        .slider__inner{
+            /* overflow: hidden; */
+            display: flex;
+            flex-direction: column;
+            transition: 0.25s;
+        }
+        .slider__inner img{
+            width: 100%;
+        }
     
-    footer{
-        background: #eeeeee;
-        display: flex;
-        justify-content: space-between;
-        padding: 40px 0;
-    }
-    footer img{
-        height: 25px;
-        padding-left: 20px;
-    }
-    .sns_cont img{
-        padding: 0 20px;
-    }
-
-
-    .gallery_desc{
-        display: none;
-    }
-
-    .on{
-        background: #fdf5f5;
-        font-weight: bold;
-    }
-    .popup{
-        display: none;
-        border: 1px solid #000;
-        background: #fff;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 500px;
-        /* height: 200px; */
-        transform: translate(-50%,-50%);
-        padding: 20px;
-        text-align: center;
-    }
-    .popup h2{
-        font-weight: bold;
-        margin-bottom: 20px;
-    }
-    .close{
-        float: right;
-        border: 1px solid #000;
-        border-radius: 5px;
-        padding: 5px;
-        background: #eee;
-    }
-    /* .popup p{
-        margin
-    } */
-</style>
+        header{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            /* padding: 30px 0px; */
+            height: 100px;
+        }
+        header img{
+            width: 150px;
+            margin: 0 40px;
+        }
+        .menu__cont{
+            display: flex;
+        }
+        .menu__cont div{
+            padding: 20px 40px;
+            position: relative;
+        }
+        .menu__cont div a{
+            text-decoration: none;
+            color: #000;
+        }
+        .menu__cont div:hover{
+            background: rgb(199, 101, 101);
+        }
+        .menu__cont div:hover a{
+            
+            color: #fff !important;
+        }
+        .menu__cont div ul{
+            position: absolute;
+            top: 50px;
+            left: 0;
+            /* height: 100px; */
+            overflow: hidden;
+            background: #fff;
+            width: 100%;
+            text-align: center;
+            z-index: 1000;
+        }
+        .menu__cont div ul li{
+            padding: 15px 10px;
+        }
+        .menu__cont div ul li:hover{
+            background: rgba(199, 101, 101, 0.507);
+        }
+        .tab__menu__cont{
+            display: flex;
+        }
+        .tab__menu__cont .tab__001,
+        .tab__menu__cont .tab__002{
+            font-size: 20px;
+            padding: 10px;
+        }
+        .tab__menu__cont .tab__001{
+            /* background: #fdf5f5;
+            font-weight: bold; */
+        }
+        .banner__cont__001 img,
+        .banner__cont__002 img{
+            width: 100%;
+        }
+        .banner__cont__001,
+        .banner__cont__002,
+        .notice__cont{
+            width: 33.5%;
+        }
+        .notice__cont ul{
+            display: flex;
+            justify-content: space-between;
+            background: #fdf5f5;
+            padding: 5px;
+            transition: 0.25s;
+        }
+        .notice__cont ul li{
+            list-style: none;
+            transition: 0.25s;
+        }
+        .banner__cont__001,
+        .banner__cont__002{
+            position: relative;
+        }
+        .banner__cont__001 p,
+        .banner__cont__002 p{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .center_cont{
+            display: flex;
+        }
+        
+        footer{
+            background: #eeeeee;
+            display: flex;
+            justify-content: space-between;
+            padding: 40px 0;
+        }
+        footer img{
+            height: 25px;
+            padding-left: 20px;
+        }
+        .sns_cont img{
+            padding: 0 20px;
+        }
+    
+    
+        .gallery_desc{
+            display: none;
+        }
+    
+        .on{
+            background: #fdf5f5;
+            font-weight: bold;
+        }
+        .popup{
+            display: none;
+            border: 1px solid #000;
+            background: #fff;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 500px;
+            /* height: 200px; */
+            transform: translate(-50%,-50%);
+            padding: 20px;
+            text-align: center;
+        }
+        .popup h2{
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .close{
+            float: right;
+            border: 1px solid #000;
+            border-radius: 5px;
+            padding: 5px;
+            background: #eee;
+        }
+        /* .popup p{
+            margin
+        } */
+    </style>
+</head>
 <body>
     <div class="container">
         <header>
@@ -304,21 +304,27 @@
     let i = 0;
     let q = 0;
 
+    // setInterval(()=>{
+    //     i += 233;
+    //     if(i>=(233*3)){
+    //         i=0;
+    //         slider_inner.style.transition="0";
+    //         slider_inner.appendChild.(slider_inner_img_last)
+    //         // slider_inner.cloneNode();
+    //         slider_inner.cloneNode.appendChild(slider_inner_img_last)
+    //     } else {
+    //         slider_inner.style.transition="0.25s";
+    //     };
+    //     console.log(i)
+    //     slider_inner.style.transform="translatey(-"+i+"px)";
+    //     // slider_inner.appendChild(slider_inner_img_last);
+    // },2000)
     setInterval(()=>{
-        i += 233;
-        if(i>=(233*3)){
-            i=0;
-            slider_inner.style.transition="0";
-            slider_inner.appendChild.(slider_inner_img_last)
-            // slider_inner.cloneNode();
-            slider_inner.cloneNode.appendChild(slider_inner_img_last)
-        } else {
-            slider_inner.style.transition="0.25s";
-        };
-        console.log(i)
-        slider_inner.style.transform="translatey(-"+i+"px)";
-        // slider_inner.appendChild(slider_inner_img_last);
-    },2000)
+        document.querySelector('.slider__inner').animate({'margin-top':'-300'},()=>{
+            document.querySelector('.slider__inner img:first').appendTo('.slider__inner')
+            document.querySelector('.slider__inner').css({'margin-top':'0'})
+        })
+    },3000)
 
     // setInterval(()=>{
     //     i += 233;

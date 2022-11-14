@@ -253,3 +253,14 @@
 .final_point em{
     font-style: normal;
 }
+
+.times{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 5px;
+    z-index: 111;
+    font-weight: bold;
+}
