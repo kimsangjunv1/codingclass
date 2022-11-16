@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #contents > section{
+            min-height: 90vh;
+        }
+        #section1{
+            background-image: linear-gradient(to top, #96fbc4 0%, #f9f586 100%);
+        }
+        #section2{
+            background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+        #section3{
+            background-image: linear-gradient(to right, #f78ca0 0%, #f9748f 19%, #fd868c 60%, #fe9a8b 100%);
+        }
+        #section4{
+            background-image: linear-gradient(to top, #505285 0%, #585e92 12%, #65689f 25%, #7474b0 37%, #7e7ebb 50%, #8389c7 62%, #9795d4 75%, #a2a1dc 87%, #b5aee4 100%);
+        }
+        #section5{
+            background-image: linear-gradient(to right, #ff758c 0%, #ff7eb3 100%);
+        }
+        #section6{
+            background-image: linear-gradient(to top, #4481eb 0%, #04befe 100%);
+        }
+        .square{
+            width: 200px;
+            height: 200px;
+            border-radius: 25px;
+            background-image: linear-gradient(60deg, #64b3f4 0%, #c2e59c 100%);
+            box-shadow: 0px 40px 60px -20px rgba(0, 0, 0, 0.372), inset 0px -10px 40px 30px rgba(255, 255, 255, 0.681);
+            border: 1px solid rgba(255, 255, 255, 0.69);
+        }
+        .square.red{
+            background-image: linear-gradient(-20deg, #fc6076 0%, #ff9a44 100%);
+        }
+
+        .square2{
+            width: 200px;
+            height: 200px;
+            border-radius: 25px;
+            background-image: linear-gradient(to right, #d7d2cc 0%, #304352 100%);
+            box-shadow: 0px 40px 60px -20px rgba(0, 0, 0, 0.372), inset 0px -10px 40px 30px rgba(255, 255, 255, 0.681);
+            border: 1px solid rgba(255, 255, 255, 0.69);
+        }
+        .square2.red{
+            background-image: linear-gradient(-20deg, #fc6076 0%, #ff9a44 100%);
+        }
+
+        .panel{
+            height: 100vh;
+            background-color: beige;
+        }
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+        }
+        .box-red {
+            background-color: red;
+        }
+        nav{
+            top: 0;
+            position: sticky;
+            transition: all 600ms;
+            background-color: tan;
+            color: rgb(92, 34, 34);
+            text-align: center;
+        }
+        li{
+            padding: 10px;
+            display: inline-block;
+        }
+
+        .not-active{
+            background: #fff;
+            color: purple;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li>about</li>
+            <li>work</li>
+            <li>contact</li>
+        </ul>
+    </nav>
+    <div class="panel">
+        Returns the ScrollSmoother instance (if one has been created). There can only be one instance at any given time.
+    </div>
+    <div class="box"></div>
+    <div class="panel"></div>
+    <!-- <main id="contents">
+        <section id="section1"></section>
+        <section id="section2">
+            <div class="square"></div>
+            <div class="square2"></div>
+        </section>
+        <section id="section3"></section>
+        <section id="section4"></section>
+        <section id="section5"></section>
+        <section id="section6"></section>
+    </main> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        ScrollTrigger.create({
+            trigger: ".panel",
+            start: "top 6%",
+            markers: true,
+            toggleClass: {targets: "nav", className: "not-active"},
+            onEnter: ()=>console.log(onEnter),
+            onLeave: ()=>console.log(onLeave),
+            onEnterBack: ()=>console.log(onEnterBack),
+            onLeaveBack: ()=>console.log(onLeaveBack),
+            
+        })
+
+        // gsap.to(".square", {
+        //     // x: 1000,
+        //     duration : 3,
+        //     scrollTrigger:{
+        //         trigger: ".square",
+        //         start: "top 70%",
+        //         end: "top 30%",
+        //         scrub: 4,
+        //         markers: {
+        //             startColor : "black",
+        //             endColor : "red",
+        //             fontSize: "30px"
+        //         },
+        //         toggleClass: "red",
+        //         toggleActions: "restart none none none",
+        //         pin: true,
+        //         pinSpacing: false
+                
+        //     }
+        // })
+
+        // gsap.to(".square", {x: 1000, duration: 2, rotation: 100, skewY: 1, borderRadius: 0})
+        // gsap.to(".square", {x: 500, duration: 2, rotation: 300,skewY: 3, borderRadius: 100, delay: 2})
+        // gsap.to(".square", {x: 0, duration: 2, rotation: 500,skewY: 1, width: 400, delay: 4})
+        // gsap.to(".square", {y: 0, duration: 2,  rotation: 1000,width: 400, delay: 6})
+        
+        // const tl = gsap.timeline({repeat: 2, yoyo: 2});
+        // tl.to(".square", {x: 1000, duration: 2, rotation: 100, skewY: 1, borderRadius: 0})
+        // tl.to(".square", {x: 500, duration: 2, rotation: 300,skewY: 3, borderRadius: 100},"-3")
+        // tl.to(".square", {x: 0, duration: 2, rotation: 500,skewY: 1, width: 400})
+        // tl.to(".square", {y: 0, duration: 2,  rotation: 1000,width: 400})
+
+        const tl = gsap.timeline({
+            scrollTrigger : {
+                trigger: ".square",
+                markers: true,
+                start: "top 80%",
+                end: "top 30%",
+                scrub: 1
+            }
+        })
+        tl.to(".square", {x: 1000, duration: 2, rotation: 100, skewY: 1, borderRadius: 0})
+            .to(".square", {x: 500, duration: 2, rotation: 300,skewY: 3, borderRadius: 100},"-3")
+            .to(".square", {x: 0, duration: 2, rotation: 500,skewY: 1, width: 400})
+            .to(".square", {y: 0, duration: 2,  rotation: 1000,width: 400})
+    </script>
+    <script>
+        // gsap.registerPlugin(ScrollTrigger);
+
+        // gsap.to(".square", {
+        //     x: 1000,
+        //     duration : 3,
+        //     scrollTrigger:{
+        //         trigger: ".square",
+        //         start: "top 70%",
+        //         end: ()=>`+=${document.querySelector(".square").offsetHeight}`,
+        //         markers: true,
+        //         toggleClass: "red"
+        //     }
+        // })
+
+        // 토글 액션 toggleActions:
+        //              onEnter onLeave onEnterBack onLeaveBack 4가지 상태를 컨트롤 가능하다.
+        // play, pause, resume, reset, restart, complete, reverse, none
+
+        // 스크롤 할때마다 움직이기
+        // scrub: 4,
+        // scrub: true
+
+        // 고정
+        // pin: true,
+        // pinSpacing: false
+
+        // 지연 : 맨뒤에 타임라인을 줘서 제어할 수 있음.
+        // tl.to(".square", {x: 500, duration: 2, rotation: 300,skewY: 3, borderRadius: 100},"-3")
+
+        // 요요
+        // const tl = gsap.timeline({repeat: 2, yoyo: 2});
+
+        // 애니메이션 : ease
+        // tl.to(".square", {x: 1000, duration: 2, rotation: 100, skewY: 1, borderRadius: 0})
+    </script>
+</body>
+
+</html>

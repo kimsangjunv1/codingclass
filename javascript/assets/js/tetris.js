@@ -105,17 +105,15 @@ function init(){
 
     timeIntervals = setInterval(()=>{
         timing++
-        searchTimes.innerText = (60-timing);
+        searchTimes.innerText = (60-timing)+"초 뒤 난이도가 UP!";
         if(timing==60){
             
-            durations = 200;
+            durations = 150;
             searchAudioSpeedUp.play()
             document.querySelector(".game__display").style.filter="hue-rotate(107deg)";
-        } else if(timing == 120){
-            level ++;
-            durations = 100;
-            searchAudioSpeedUp.play()
-            document.querySelector(".game__display").style.filter="hue-rotate(207deg)";
+            timing=0;
+            clearInterval(timeIntervals)
+            searchTimes.innerText = "난이도 UP";
         }
     },1000);
     
