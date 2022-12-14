@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 이벤트 객체</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/dracula.css">
+</head>
+<body>
+    <div class="extend_menu extend_menu_opacity_hide">&gt;</div>
+    <header id="header">
+        <div style="background-color: #ededed; border-radius: 50px; width: 25px; position:absolute; right: 20px; cursor: pointer;"class="compact_menu">x</div>
+        <h1><a href="index.html">Javascript</a></h1>
+        <div style="margin:0 auto;
+                    background-color: #f2f2f7;
+                    width: 115px;
+                    text-align: center;
+                    padding: 10px;
+                    margin-bottom: 42px;
+                    cursor: pointer;
+                    border-radius: 5px;" class="light">불 끄기</div>
+
+        <div style="margin:0 auto;
+                    background-color: #000;
+                    width: 115px; 
+                    text-align: center;
+                    padding: 10px;
+                    margin-bottom: 42px;
+                    cursor: pointer;
+                    border-radius: 5px;" class="dark hide">불 켜기</div>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="javascript01.html">데이터 저장하기</a></li>
+                <li><a href="javascript02.html">데이터 불러오기</a></li>
+                <li><a href="javascript03.html">데이터 실행하기</a></li>
+                <li><a href="javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="javascript05.html">문자열 객체</a></li>
+                <li><a href="javascript06.html">배열 객체</a></li>
+                <li><a href="javascript07.html">수학 객체</a></li>
+                <li><a href="javascript08.html">숫자 객체</a></li>
+                <li><a href="javascript09.html">브라우저 객체</a></li>
+                <li><a href="javascript10.html">요소 객체</a></li>
+                <li><a href="javascript11.html">이벤트 객체</a></li>
+                <li class="active"><a href="javascript12.html">제이쿼리</a></li>
+            </ul>
+            <ul class="effect">
+                <li><a href="effect/searchEffect.html">검색 효과</a></li>
+                <li><a href="effect/quizEffect.html">퀴즈 효과</a></li>
+                <li><a href="effect/dataEffect.html">데이터 효과</a></li>
+                <li><a href="effect/mouseEffect.html">마우스 효과</a></li>
+                <li><a href="effect/sliderEffect.html">슬라이드 효과</a></li>
+                <li><a href="effect/parallaxEffect.html">패럴랙스 효과</a></li>
+                <li><a href="effect/gameEffect.html">게임 효과</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <!-- 티스토리 용 -->
+        <div id="sample01" class="container sample document">
+        <!-- 메인 샘플 시작 -->
+            <h2 class="t_tit">프로그래머스 1단계</h2>
+            <p class="t_desc">
+                2022년에 2016년 문제를 풀어볼까요?
+            </p>
+
+            <hr>
+
+            <div class="question_01">
+                <h2 class="t_tit2">2016년!</h2>
+                <p class="t_desc2">
+                    for과 push를 통한 방법입니다.
+                <p class="t_box">
+                    1. 1월 1일부터 a월 b일까지 며칠 차이인지 저장할 변수<br>
+                    2. a달 전까지의 모든 달에 대해 각 달의 날짜 수 더해줌<br>
+                    3. b일 더해주고 1월 0일이 아닌 1월 1일부터 시작하므로 1 빼줌
+                </p>
+            <div class="t_code">
+<pre><code class="language-js">function solution(a, b) {
+    let arr = [0, 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+    let week = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
+    let passedDays = 0;
+
+    for (let i = 1; i < a; i++) passedDays += arr[i];
+
+    passedDays += b - 1;
+
+    return week[(5 + passedDays) % 7];
+  }
+</code></pre>
+                </div>
+            </div>
+            <div class="question_02">
+                <h2 class="t_tit2">2016년 : 다른 사람 풀이</h2>
+                <p class="t_desc2">
+                    for/if 와 sort를 통한 방법입니다.
+                <p class="t_box">
+                    1. 문자열을 사용하는 방법 외에 Date를 생성하는 새로운 방법을 알게 되었다. (월 입력에 주의!!!)<br>
+                    2. 생성된 Date를 문자열로 변환하면 앞 세글자는 요일의 줄임말이다!
+                </p>
+            <div class="t_code">
+<pre><code class="language-js">function getDayName(a,b){
+    var date = new Date(2016, (a - 1), b);
+      return date.toString().slice(0, 3).toUpperCase();
+  }
+</code></pre>
+                </div>
+            </div>
+            
+        </div>
+        <!-- 티스토리 용 끝 -->
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:webstoryboy@naver.com">webstoryboy@naver.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../../assets/js/highlight.min.js"></script>
+    <script src="../../assets/js/menu_setting.js"></script><!-- 1. 스크립트 가져옴 (다음줄) -->
+    <script>
+        hljs.highlightAll();
+    </script>
+    <script>
+    </script>
+
+</body>
+</html>
